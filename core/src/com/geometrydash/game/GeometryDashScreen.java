@@ -4,64 +4,38 @@ import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class GeometryDashScreen implements Screen {
-	private final GeometryDash game;
-	private SpriteBatch spriteBatch;
-	private Texture groundTexture;
-	private Sprite textureSprite;
+public class GeometryDashScreen extends Game {
+	public static GeometryDashScreen INSTANCE;
+	private int widthScreen, heightScreen;
+	public OrthographicCamera orthographicCamera;
+	public SpriteBatch batch;
 
-	public GeometryDashScreen(GeometryDash game) {
-		this.game = game;
-		create();
+	public GeometryDashScreen(){
+		INSTANCE = this;
 	}
 
+	@Override
 	public void create() {
-		groundTexture = new Texture(Gdx.files.internal("img.png"));
-		spriteBatch = new SpriteBatch();
-		textureSprite = new Sprite(groundTexture);
-		textureSprite.setBounds(0, 0, 600, 300);
+		batch = new SpriteBatch();
+		this.widthScreen = Gdx.graphics.getWidth();
+		this.heightScreen = Gdx.graphics.getHeight();
+		this.orthographicCamera = new OrthographicCamera();
+		this.orthographicCamera.setToOrtho(false, widthScreen, heightScreen);
+		setScreen(new MenuGame(this));
 	}
 
 	@Override
-	public void show() {
-
-	}
-
-	@Override
-	public void render(float delta) {
-		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-		spriteBatch.begin();
-		textureSprite.draw(spriteBatch);
-		spriteBatch.end();
-	}
-
-	@Override
-	public void resize(int width, int height) {
-		spriteBatch.getProjectionMatrix().setToOrtho2D(0, 0, width, height);
-	}
-
-	@Override
-	public void pause() {
-
-	}
-
-	@Override
-	public void resume() {
-
-	}
-
-	@Override
-	public void hide() {
-
+	public void render() {
+		super.render();
 	}
 
 	@Override
 	public void dispose() {
-		groundTexture.dispose();
-		spriteBatch.dispose();
+		batch.dispose();
 	}
 }

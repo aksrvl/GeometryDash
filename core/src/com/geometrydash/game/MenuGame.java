@@ -1,13 +1,15 @@
 package com.geometrydash.game;
 
+import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 
 public class MenuGame implements Screen {
-    final GeometryDash game;
-    OrthographicCamera camera;
+    //final GeometryDash game;
+    final GeometryDashScreen game;
+    public OrthographicCamera camera;
     Texture backgroundTexture;
     Texture playButton;
     Texture settingsButton;
@@ -20,15 +22,19 @@ public class MenuGame implements Screen {
     private static final int SKINS_BUTTON_HEIGHT = 100;
 
 
-    public MenuGame(final GeometryDash game){
+    public MenuGame(final GeometryDashScreen game){
+        int screenWidth = Gdx.graphics.getWidth();
+        int screenHeight = Gdx.graphics.getHeight();
+
         this.game = game;
+
+        this.camera = new OrthographicCamera();
+        this.camera.setToOrtho(false, screenWidth, screenHeight);
 
         playButton = new Texture("playbutton.png");
         settingsButton = new Texture("settingsbutton.png");
         skinsButton = new Texture("skinbutton.png");
 
-        int screenWidth = Gdx.graphics.getWidth();
-        int screenHeight = Gdx.graphics.getHeight();
 
         camera = new OrthographicCamera();
         camera.setToOrtho(false, 1200, 480);
@@ -60,7 +66,7 @@ public class MenuGame implements Screen {
             game.batch.draw(playButton, play_x-10, play_y-20, PLAY_BUTTON_WIDTH+20, PLAY_BUTTON_HEIGHT+20);
             if(Gdx.input.isTouched()){
                 this.dispose();
-                game.setScreen(new GeometryDashScreen(game));
+                game.setScreen(new GameScreen(camera, game));
             }
         }else{
             game.batch.draw(playButton, play_x, play_y, PLAY_BUTTON_WIDTH, PLAY_BUTTON_HEIGHT);
@@ -95,4 +101,7 @@ public class MenuGame implements Screen {
     public void dispose() {
         backgroundTexture.dispose();
     }
+
+
+
 }
