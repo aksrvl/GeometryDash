@@ -2,12 +2,15 @@ package com.geometrydash.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 public class SettingsScreen implements Screen {
@@ -35,22 +38,27 @@ public class SettingsScreen implements Screen {
 
         // Set up the stage and skin
         stage = new Stage(new ScreenViewport());
-        //skin = new Skin(Gdx.files.internal("uiskin.json")); // Load the skin file
+        skin = new Skin(Gdx.files.internal("uiskin.json")); // Load the skin file
+
 
         // Create a volume slider using the skin
         volumeSlider = new Slider(0, 1, 0.01f, false, skin);
         volumeSlider.setValue(game.getVolume()); // Set the initial volume to the current volume
+        volumeSlider.setHeight(200);
 
         // Add a listener to update the volume when the slider value changes
-        volumeSlider.addListener(event -> {
-            game.setVolume(volumeSlider.getValue());
-            return false;
+        volumeSlider.addListener(new ClickListener() {
+            @Override
+            public void touchDragged(InputEvent event, float x, float y, int pointer) {
+                game.setVolume(volumeSlider.getValue());
+            }
         });
 
-        // Use a table to layout the slider
+        // Use a table to the slider
         Table table = new Table();
         table.setFillParent(true);
-        table.add(volumeSlider).width(400); // Adjust the width as needed
+        table.center(); // Center the table on the screen
+        table.add(volumeSlider).width(400).padBottom(120); // Adjust the width and padding as needed
 
         // Add the table to the stage
         stage.addActor(table);
@@ -92,11 +100,17 @@ public class SettingsScreen implements Screen {
         }
 
         game.batch.end();
+
+        // Render the stage containing the slider
+        stage.act(delta);
+        stage.draw();
     }
 
     @Override
     public void resize(int width, int height) {
         camera.setToOrtho(false, width, height);
+        stage.getViewport().update(width, height, true);
+
     }
 
     @Override
@@ -118,5 +132,7 @@ public class SettingsScreen implements Screen {
     public void dispose() {
         backgroundTexture.dispose();
         returnButton.dispose();
+        stage.dispose();
+        skin.dispose();
     }
 }
