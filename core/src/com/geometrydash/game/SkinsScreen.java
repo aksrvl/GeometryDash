@@ -25,7 +25,7 @@ public class SkinsScreen implements Screen {
     private static final int SKIN_BUTTON_HEIGHT = 220;
     private static final int CHOSEN_BUTTON_WIDTH = 66;
     private static final int CHOSEN_BUTTON_HEIGHT = 56;
-    private int selectedSkin = -1;
+    public static int selectedSkin;
 
     public SkinsScreen(GeometryDashGame game) {
         this.game = game;
@@ -85,12 +85,12 @@ public class SkinsScreen implements Screen {
         int row2_y = 200;
 
         renderSkinButton(300, row1_y, skin1, 0);
-        renderSkinButton(300, row2_y, skin5, 1);
-        renderSkinButton(650, row1_y, skin2, 2);
-        renderSkinButton(650, row2_y, skin6, 3);
-        renderSkinButton(1000, row1_y, skin3, 4);
-        renderSkinButton(1000, row2_y, skin7, 5);
-        renderSkinButton(1350, row1_y, skin4, 6);
+        renderSkinButton(650, row1_y, skin2, 1);
+        renderSkinButton(300, row2_y, skin5, 4);
+        renderSkinButton(650, row2_y, skin6, 5);
+        renderSkinButton(1000, row1_y, skin3, 2);
+        renderSkinButton(1000, row2_y, skin7, 6);
+        renderSkinButton(1350, row1_y, skin4, 3);
         renderSkinButton(1350, row2_y, skin8, 7);
 
         game.batch.end();
