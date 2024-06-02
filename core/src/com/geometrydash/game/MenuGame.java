@@ -2,6 +2,7 @@ package com.geometrydash.game;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 
@@ -21,7 +22,6 @@ public class MenuGame implements Screen {
     private static final int SKINS_BUTTON_HEIGHT = 200;
     private static final int EXIT_BUTTON_WIDTH = 120;
     private static final int EXIT_BUTTON_HEIGHT = 50;
-
 
     public MenuGame(final GeometryDashGame game){
         int screenWidth = Gdx.graphics.getWidth();
@@ -44,7 +44,6 @@ public class MenuGame implements Screen {
     }
     @Override
     public void show() {
-
     }
 
     @Override

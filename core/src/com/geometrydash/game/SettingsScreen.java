@@ -4,10 +4,18 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Slider;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
 public class SettingsScreen implements Screen {
     final GeometryDashGame game;
     public OrthographicCamera camera;
+    private Stage stage;
+    private Skin skin;
+    private Slider volumeSlider;
     Texture backgroundTexture;
     Texture returnButton;
     private static final int RETURN_BUTTON_WIDTH = 140;
@@ -24,6 +32,31 @@ public class SettingsScreen implements Screen {
         returnButton = new Texture("returnbutton.png");
 
         backgroundTexture = new Texture(Gdx.files.internal("SettingsBackground.png"));
+
+        // Set up the stage and skin
+        stage = new Stage(new ScreenViewport());
+        //skin = new Skin(Gdx.files.internal("uiskin.json")); // Load the skin file
+
+        // Create a volume slider using the skin
+        volumeSlider = new Slider(0, 1, 0.01f, false, skin);
+        volumeSlider.setValue(game.getVolume()); // Set the initial volume to the current volume
+
+        // Add a listener to update the volume when the slider value changes
+        volumeSlider.addListener(event -> {
+            game.setVolume(volumeSlider.getValue());
+            return false;
+        });
+
+        // Use a table to layout the slider
+        Table table = new Table();
+        table.setFillParent(true);
+        table.add(volumeSlider).width(400); // Adjust the width as needed
+
+        // Add the table to the stage
+        stage.addActor(table);
+
+        // Set the input processor to handle input events for the stage
+        Gdx.input.setInputProcessor(stage);
     }
 
     @Override
