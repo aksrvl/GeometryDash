@@ -13,9 +13,8 @@ public class DesktopLauncher {
 		config.setTitle("GeometryDash");
 		//full screen:
 		Graphics.DisplayMode displayMode = Lwjgl3ApplicationConfiguration.getDisplayMode();
-		//config.setFullscreenMode(displayMode);
-		config.setWindowedMode(1200, 480);
-		config.setResizable(false);
-		new Lwjgl3Application(new GeometryDashScreen(), config);
+		config.setFullscreenMode(displayMode);
+		//	onfig.setResizable(false);
+		new Lwjgl3Application(new GeometryDashGame(), config);
 	}
 }

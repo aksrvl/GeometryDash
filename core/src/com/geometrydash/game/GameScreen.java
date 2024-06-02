@@ -1,7 +1,6 @@
 package com.geometrydash.game;
 
 import Helper.TileMapHelper;
-import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
@@ -25,10 +24,10 @@ public class GameScreen extends ScreenAdapter{
 
     private OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
     private TileMapHelper tileMapHelper;
-    private final GeometryDashScreen game;
+    private final GeometryDashGame game;
 
 
-    public GameScreen(OrthographicCamera camera, GeometryDashScreen game){
+    public GameScreen(OrthographicCamera camera, GeometryDashGame game){
         this.camera = camera;
         this.game = game;
         this.batch = new SpriteBatch();

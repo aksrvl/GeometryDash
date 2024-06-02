@@ -2,20 +2,16 @@ package com.geometrydash.game;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
-public class GeometryDashScreen extends Game {
-	public static GeometryDashScreen INSTANCE;
+public class GeometryDashGame extends Game {
+	public static GeometryDashGame INSTANCE;
 	private int widthScreen, heightScreen;
 	public OrthographicCamera orthographicCamera;
 	public SpriteBatch batch;
 
-	public GeometryDashScreen(){
+	public GeometryDashGame(){
 		INSTANCE = this;
 	}
 
