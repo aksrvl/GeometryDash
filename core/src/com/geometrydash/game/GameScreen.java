@@ -10,13 +10,12 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
-import com.badlogic.gdx.physics.box2d.Box2DDebugRenderer;
-import com.badlogic.gdx.physics.box2d.World;
+import com.badlogic.gdx.physics.box2d.*;
 import objects.player.Player;
 
 import static Helper.Constants.PPM;
 
-public class GameScreen extends ScreenAdapter{
+public class GameScreen extends ScreenAdapter implements ContactListener {
 
     private OrthographicCamera camera;
     private SpriteBatch batch;
@@ -86,4 +85,50 @@ public class GameScreen extends ScreenAdapter{
     public void setPlayer(Player player){
         this.player = player;
     }
+
+    @Override
+    public void show() {
+        // Ініціалізація вашого світу та інших об'єктів
+        world.setContactListener(this);
+    }
+
+    @Override
+    public void beginContact(Contact contact) {
+        Fixture fixtureA = contact.getFixtureA();
+        Fixture fixtureB = contact.getFixtureB();
+
+        if (fixtureA.getUserData() != null && fixtureA.getUserData().equals("groundSensor")) {
+            handleGroundContact(fixtureA, fixtureB, true);
+        } else if (fixtureB.getUserData() != null && fixtureB.getUserData().equals("groundSensor")) {
+            handleGroundContact(fixtureB, fixtureA, true);
+        }
+    }
+
+    @Override
+    public void endContact(Contact contact) {
+        Fixture fixtureA = contact.getFixtureA();
+        Fixture fixtureB = contact.getFixtureB();
+
+        if (fixtureA.getUserData() != null && fixtureA.getUserData().equals("groundSensor")) {
+            handleGroundContact(fixtureA, fixtureB, false);
+        } else if (fixtureB.getUserData() != null && fixtureB.getUserData().equals("groundSensor")) {
+            handleGroundContact(fixtureB, fixtureA, false);
+        }
+    }
+
+    private void handleGroundContact(Fixture sensorFixture, Fixture otherFixture, boolean isBegin) {
+        Body playerBody = sensorFixture.getBody();
+        Player player = (Player) playerBody.getUserData();
+        if (player != null) {
+            player.setOnGround(isBegin);
+        }
+    }
+
+    // Інші методи ContactListener
+    @Override
+    public void preSolve(Contact contact, Manifold oldManifold) {}
+    @Override
+    public void postSolve(Contact contact, ContactImpulse impulse) {}
+
 }
+
