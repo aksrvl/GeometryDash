@@ -10,6 +10,7 @@ import com.badlogic.gdx.physics.box2d.Body;
 
 import static Helper.Constants.PPM;
 
+
 public class Player extends GameEntity {
 
     private Sprite sprite;
