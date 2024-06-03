@@ -73,7 +73,6 @@ public class Player extends GameEntity {
                 jumpRotation = 270;
             }
             isJumping = false;
-
         }
         body.setLinearVelocity(speed, body.getLinearVelocity().y < 18 ? body.getLinearVelocity().y : 18);
     }
