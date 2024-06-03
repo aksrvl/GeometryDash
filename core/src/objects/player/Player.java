@@ -37,7 +37,6 @@ public class Player extends GameEntity {
         sprite.setRotation(jumpRotation);
     }
 
-
     @Override
     public void render(SpriteBatch batch) {
         sprite.draw(batch);
@@ -78,4 +77,3 @@ public class Player extends GameEntity {
         body.setLinearVelocity(speed, body.getLinearVelocity().y < 18 ? body.getLinearVelocity().y : 18);
     }
 }
-
