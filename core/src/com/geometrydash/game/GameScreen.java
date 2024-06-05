@@ -88,7 +88,6 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
 
     @Override
     public void show() {
-        // Ініціалізація вашого світу та інших об'єктів
         world.setContactListener(this);
     }
 
@@ -124,7 +123,6 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         }
     }
 
-    // Інші методи ContactListener
     @Override
     public void preSolve(Contact contact, Manifold oldManifold) {}
     @Override

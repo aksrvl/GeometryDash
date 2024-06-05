@@ -22,7 +22,6 @@ public class BodyHelperService {
         body.createFixture(fixtureDef);
         shape.dispose();
 
-        // Додати сенсор для виявлення землі
         PolygonShape sensorShape = new PolygonShape();
         sensorShape.setAsBox(width / 2 / PPM, 5 / PPM, new Vector2(0, -height / 2 / PPM), 0);
         FixtureDef sensorFixtureDef = new FixtureDef();

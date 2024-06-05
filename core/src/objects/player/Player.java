@@ -20,7 +20,7 @@ public class Player extends GameEntity {
 
     public Player(float width, float height, Body body) {
         super(width, height, body);
-        this.speed = 15f;
+        this.speed = 8f;
         sprite = new Sprite(TextureHelper.changeTexture());
         jumpRotation = 0;
         isJumping = false;
