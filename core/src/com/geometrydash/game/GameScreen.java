@@ -103,6 +103,22 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
             handlePortalContact(fixtureA, fixtureB, isBegin);
         } else if (fixtureB.getUserData() != null && fixtureB.getUserData().equals("Portal")) {
             handlePortalContact(fixtureB, fixtureA, isBegin);
+        } else if (fixtureA.getUserData() != null && fixtureA.getUserData().equals("spike")) {
+            handleSpikeContact(fixtureA, fixtureB, isBegin);
+        } else if (fixtureB.getUserData() != null && fixtureB.getUserData().equals("spike")) {
+            handleSpikeContact(fixtureB, fixtureA, isBegin);
+        }
+    }
+
+    private void handleSpikeContact(Fixture spikeFixture, Fixture otherFixture, boolean isBegin) {
+        if (isBegin) { // Ensure this only triggers when contact begins
+            Body playerBody = otherFixture.getBody();
+            Player player = (Player) playerBody.getUserData();
+            if (player != null) {
+                //todo restart game
+                game.playNewMusic("music/trainingLevel.mp3");
+                game.setScreen(new GameScreen(camera, game));
+            }
         }
     }
 
@@ -116,14 +132,10 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
 
     private void handlePortalContact(Fixture sensorFixture, Fixture otherFixture, boolean isBegin) {
         if (isBegin) {
-            System.out.println("Portal contact detected.");
             Body playerBody = otherFixture.getBody();
             Player player = (Player) playerBody.getUserData();
             if (player != null) {
-                System.out.println("Changing control scheme for player.");
                 player.changeControl();
-            } else {
-                System.out.println("No player found.");
             }
         }
     }
@@ -133,5 +145,3 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
     @Override
     public void postSolve(Contact contact, ContactImpulse impulse) {}
 }
-
-
