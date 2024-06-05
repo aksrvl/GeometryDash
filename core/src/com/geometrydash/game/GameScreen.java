@@ -34,7 +34,7 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         this.camera = camera;
         this.game = game;
         this.batch = new SpriteBatch();
-        this.world = new World(new Vector2(0, -45f), false);
+        this.world = new World(new Vector2(0, -57f), false);
         this.box2DDebugRenderer = new Box2DDebugRenderer();
 
         this.tileMapHelper = new TileMapHelper(this);

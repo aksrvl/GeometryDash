@@ -3,6 +3,7 @@ package com.geometrydash.game;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -61,5 +62,22 @@ public class GeometryDashGame extends Game {
 		if (backgroundMusic.isPlaying()) {
 			backgroundMusic.stop();
 		}
+	}
+	public void setScreen(Screen screen) {
+		// Stop the background music if it is playing
+		//stopMusic();
+		// Set the new screen
+		super.setScreen(screen);
+	}
+
+	// Додайте метод, що викликається для встановлення нової музики
+	public void playNewMusic(String musicFile) {
+		// Stop the current music
+		stopMusic();
+		// Load and play the new music
+		backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal(musicFile));
+		backgroundMusic.setLooping(true);
+		backgroundMusic.setVolume(getVolume());
+		backgroundMusic.play();
 	}
 }

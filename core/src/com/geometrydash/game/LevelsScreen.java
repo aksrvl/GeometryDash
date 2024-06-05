@@ -95,6 +95,7 @@ public class LevelsScreen implements Screen {
         // Draw the chosen button on the selected skin
         if (selectedLevel == 0) {
             this.dispose();
+            game.playNewMusic("music/trainingLevel.mp3");
             game.setScreen(new GameScreen(camera, game));
         }else if(selectedLevel == 1){
 

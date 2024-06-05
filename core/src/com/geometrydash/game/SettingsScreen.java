@@ -7,6 +7,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Dialog;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.scenes.scene2d.ui.Slider;
 import com.badlogic.gdx.scenes.scene2d.ui.Table;
@@ -21,6 +22,11 @@ public class SettingsScreen implements Screen {
     private Slider volumeSlider;
     Texture backgroundTexture;
     Texture returnButton;
+    Texture songsButton;
+    Texture creditsButton;
+    Texture howToPlayButton;
+    private static final int BUTTON_WIDTH = 300;
+    private static final int BUTTON_HEIGHT = 130;
     private static final int RETURN_BUTTON_WIDTH = 140;
     private static final int RETURN_BUTTON_HEIGHT = 70;
 
@@ -33,7 +39,9 @@ public class SettingsScreen implements Screen {
         this.camera.setToOrtho(false, screenWidth, screenHeight);
 
         returnButton = new Texture("returnbutton.png");
-
+        howToPlayButton = new Texture("HowPlayButton.png");
+        songsButton = new Texture("SongsButton.png");
+        creditsButton = new Texture("CreditsButton.png");
         backgroundTexture = new Texture(Gdx.files.internal("SettingsBackground.png"));
 
         // Set up the stage and skin
@@ -99,12 +107,41 @@ public class SettingsScreen implements Screen {
             game.batch.draw(returnButton, return_x, return_y, RETURN_BUTTON_WIDTH, RETURN_BUTTON_HEIGHT);
         }
 
+        if (inputX < 600 + BUTTON_WIDTH && inputX > 600 && inputY < 400 + BUTTON_HEIGHT && inputY > 400) {
+            game.batch.draw(creditsButton, 600-10, 400-20, BUTTON_WIDTH+20, BUTTON_HEIGHT+20);
+            if (Gdx.input.isTouched()) {
+                game.setScreen(new CreditsScreen(game));
+            }
+        } else {
+            game.batch.draw(creditsButton, 600, 400, BUTTON_WIDTH, BUTTON_HEIGHT);
+        }
+
+        if (inputX < 1000 + BUTTON_WIDTH && inputX > 1000 && inputY < 400 + 150 && inputY > 400) {
+            game.batch.draw(songsButton, 1000-10, 400-20, BUTTON_WIDTH+20, 150+20);
+            if (Gdx.input.isTouched()) {
+                game.setScreen(new SongsScreen(game));
+            }
+        } else {
+            game.batch.draw(songsButton, 1000, 400, BUTTON_WIDTH, 150);
+        }
+
+        if (inputX < 800 + BUTTON_WIDTH && inputX > 800 && inputY < 300 + 100 && inputY > 300) {
+            game.batch.draw(howToPlayButton, 800-10, 300-20, BUTTON_WIDTH+20, 100+20);
+            if (Gdx.input.isTouched()) {
+
+            }
+        } else {
+            game.batch.draw(howToPlayButton, 800, 300, BUTTON_WIDTH, 100);
+        }
+
         game.batch.end();
 
         // Render the stage containing the slider
         stage.act(delta);
         stage.draw();
     }
+
+
 
     @Override
     public void resize(int width, int height) {
