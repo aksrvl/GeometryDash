@@ -30,11 +30,11 @@ public class LevelsScreen implements Screen {
         camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         returnButton = new Texture("returnbutton.png");
-        levelButton_0 = new Texture("level0Icon.png");
-        levelButton_1 = new Texture("level1Icon.png");
-        levelButton_2 = new Texture("level2Icon.png");
-        levelButton_3 = new Texture("level3Icon.png");
-        backgroundTexture = new Texture(Gdx.files.internal("LevelBackground.png"));
+        levelButton_0 = new Texture("level_icons/level0Icon.png");
+        levelButton_1 = new Texture("level_icons/level1Icon.png");
+        levelButton_2 = new Texture("level_icons/level2Icon.png");
+        levelButton_3 = new Texture("level_icons/level3Icon.png");
+        backgroundTexture = new Texture(Gdx.files.internal("level_icons/LevelBackground.png"));
     }
 
     @Override

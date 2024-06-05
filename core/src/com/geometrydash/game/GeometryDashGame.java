@@ -27,7 +27,7 @@ public class GeometryDashGame extends Game {
 		this.orthographicCamera = new OrthographicCamera();
 		this.orthographicCamera.setToOrtho(false, widthScreen, heightScreen);
 
-		backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("backgroundMusic.mp3"));
+		backgroundMusic = Gdx.audio.newMusic(Gdx.files.internal("music/backgroundMusic.mp3"));
 		backgroundMusic.setLooping(true);
 		// Load volume settings
 		preferences = Gdx.app.getPreferences("GeometryDashPreferences");
