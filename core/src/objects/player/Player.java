@@ -10,13 +10,13 @@ import com.badlogic.gdx.physics.box2d.Body;
 
 import static Helper.Constants.PPM;
 
-
 public class Player extends GameEntity {
-
+    private float changeY=0;
     private Sprite sprite;
     private float jumpRotation;
     private boolean isJumping;
     private boolean onGround;
+    private boolean alternateControl; // New field for alternate control
 
     public Player(float width, float height, Body body) {
         super(width, height, body);
@@ -25,7 +25,8 @@ public class Player extends GameEntity {
         jumpRotation = 0;
         isJumping = false;
         onGround = false;
-        body.setUserData(this);
+        alternateControl = false; // Initialize alternate control to false
+        body.setUserData(this); // Встановлюємо користувацькі дані для тіла
     }
 
     @Override
@@ -51,13 +52,20 @@ public class Player extends GameEntity {
     }
 
     private void checkUserInput() {
+        if (alternateControl) {
+            checkAlternateControl();
+        } else if (!alternateControl){
+            checkDefaultControl();
+        }
+    }
+
+    private void checkDefaultControl() {
         if ((Gdx.input.isKeyPressed(Input.Keys.SPACE) || Gdx.input.isButtonPressed(Input.Buttons.LEFT)) && onGround) {
             float force = body.getMass() * 18;
             body.applyLinearImpulse(new Vector2(0, force), body.getPosition(), true);
             isJumping = true;
             onGround = false;
         }
-
         if (body.getLinearVelocity().y > 0) {
             jumpRotation += 2.5;
             if (jumpRotation > 360) {
@@ -76,5 +84,17 @@ public class Player extends GameEntity {
             isJumping = false;
         }
         body.setLinearVelocity(speed, body.getLinearVelocity().y < 18 ? body.getLinearVelocity().y : 18);
+    }
+
+    private void checkAlternateControl() {
+        if (Gdx.input.isKeyPressed(Input.Keys.SPACE)|| Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+            body.setLinearVelocity(speed, 12);
+        } else {
+            body.setLinearVelocity(speed, -12);
+        }
+    }
+
+    public void changeControl() {
+        alternateControl = !alternateControl;
     }
 }

@@ -21,14 +21,10 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
     private SpriteBatch batch;
     private World world;
     private Box2DDebugRenderer box2DDebugRenderer;
-
     private OrthogonalTiledMapRenderer orthogonalTiledMapRenderer;
     private TileMapHelper tileMapHelper;
     private final GeometryDashGame game;
-
-    //game objects
     private Player player;
-
 
     public GameScreen(OrthographicCamera camera, GeometryDashGame game){
         this.camera = camera;
@@ -36,7 +32,6 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         this.batch = new SpriteBatch();
         this.world = new World(new Vector2(0, -57f), false);
         this.box2DDebugRenderer = new Box2DDebugRenderer();
-
         this.tileMapHelper = new TileMapHelper(this);
         this.orthogonalTiledMapRenderer = tileMapHelper.setupMap();
     }
@@ -44,11 +39,9 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
     private void update(){
         world.step(1/60f, 6, 2);
         cameraUpdate();
-
         batch.setProjectionMatrix(camera.combined);
         orthogonalTiledMapRenderer.setView(camera);
         player.update();
-
         if(Gdx.input.isKeyPressed(Input.Keys.ESCAPE)){
             Gdx.app.exit();
         }
@@ -64,14 +57,10 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
     @Override
     public void render(float delta) {
         this.update();
-
         Gdx.gl.glClearColor(0,0,0,1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
-
         orthogonalTiledMapRenderer.render();
-
         batch.begin();
-
         player.update();
         player.render(batch);
         batch.end();
@@ -95,23 +84,25 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
     public void beginContact(Contact contact) {
         Fixture fixtureA = contact.getFixtureA();
         Fixture fixtureB = contact.getFixtureB();
-
-        if (fixtureA.getUserData() != null && fixtureA.getUserData().equals("groundSensor")) {
-            handleGroundContact(fixtureA, fixtureB, true);
-        } else if (fixtureB.getUserData() != null && fixtureB.getUserData().equals("groundSensor")) {
-            handleGroundContact(fixtureB, fixtureA, true);
-        }
+        handleContact(fixtureA, fixtureB, true);
     }
 
     @Override
     public void endContact(Contact contact) {
         Fixture fixtureA = contact.getFixtureA();
         Fixture fixtureB = contact.getFixtureB();
+        handleContact(fixtureA, fixtureB, false);
+    }
 
+    private void handleContact(Fixture fixtureA, Fixture fixtureB, boolean isBegin) {
         if (fixtureA.getUserData() != null && fixtureA.getUserData().equals("groundSensor")) {
-            handleGroundContact(fixtureA, fixtureB, false);
+            handleGroundContact(fixtureA, fixtureB, isBegin);
         } else if (fixtureB.getUserData() != null && fixtureB.getUserData().equals("groundSensor")) {
-            handleGroundContact(fixtureB, fixtureA, false);
+            handleGroundContact(fixtureB, fixtureA, isBegin);
+        } else if (fixtureA.getUserData() != null && fixtureA.getUserData().equals("Portal")) {
+            handlePortalContact(fixtureA, fixtureB, isBegin);
+        } else if (fixtureB.getUserData() != null && fixtureB.getUserData().equals("Portal")) {
+            handlePortalContact(fixtureB, fixtureA, isBegin);
         }
     }
 
@@ -123,10 +114,24 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         }
     }
 
+    private void handlePortalContact(Fixture sensorFixture, Fixture otherFixture, boolean isBegin) {
+        if (isBegin) {
+            System.out.println("Portal contact detected.");
+            Body playerBody = otherFixture.getBody();
+            Player player = (Player) playerBody.getUserData();
+            if (player != null) {
+                System.out.println("Changing control scheme for player.");
+                player.changeControl();
+            } else {
+                System.out.println("No player found.");
+            }
+        }
+    }
+
     @Override
     public void preSolve(Contact contact, Manifold oldManifold) {}
     @Override
     public void postSolve(Contact contact, ContactImpulse impulse) {}
-
 }
+
 
