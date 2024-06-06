@@ -25,7 +25,7 @@
    eJztzrEJADAIADDt4v8HC/7QRYTkgkQAAAAAAAC/OrcHXFJvewAAAAw6xwEI
   </data>
  </layer>
- <objectgroup id="3" name="objects" visible="0">
+ <objectgroup id="3" name="objects">
   <object id="2" name="player" x="192" y="896" width="64" height="64"/>
   <object id="3" x="0" y="960">
    <polygon points="0,0 6338.67,0 6338.67,128 0,128"/>
@@ -66,82 +66,82 @@
   <object id="12" x="3264" y="960">
    <polygon points="0,0 0,-125.333 64,-125.333 64,0"/>
   </object>
-  <object id="13" x="448" y="960">
+  <object id="13" name="spike" x="448" y="960">
    <polygon points="0,0 31.8182,-56.1818 64,0"/>
   </object>
-  <object id="14" x="2496" y="960">
+  <object id="14" name="spike" x="2496" y="960">
    <polygon points="0,0 31.6364,-55.8182 64,0"/>
   </object>
-  <object id="16" x="2688" y="960">
+  <object id="16" name="spike" x="2688" y="960">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="56" x="3072" y="960">
+  <object id="56" name="spike" x="3072" y="960">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="76" x="7616" y="1024">
+  <object id="76" name="spike" x="7616" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="77" x="7680" y="1024">
+  <object id="77" name="spike" x="7680" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="79" x="7744" y="1024">
+  <object id="79" name="spike" x="7744" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="80" x="7808" y="1024">
+  <object id="80" name="spike" x="7808" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="81" x="7872" y="1024">
+  <object id="81" name="spike" x="7872" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="82" x="7936" y="1024">
+  <object id="82" name="spike" x="7936" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="83" x="8000" y="1024">
+  <object id="83" name="spike" x="8000" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="84" x="8064" y="1024">
+  <object id="84" name="spike" x="8064" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="85" x="8128" y="1024">
+  <object id="85" name="spike" x="8128" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="86" x="8192" y="1024">
+  <object id="86" name="spike" x="8192" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="87" x="8256" y="1024">
+  <object id="87" name="spike" x="8256" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="88" x="8320" y="1024">
+  <object id="88" name="spike" x="8320" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="89" x="8384" y="1024">
+  <object id="89" name="spike" x="8384" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="90" x="8448" y="1024">
+  <object id="90" name="spike" x="8448" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="91" x="8512" y="1024">
+  <object id="91" name="spike" x="8512" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="92" x="8576" y="1024">
+  <object id="92" name="spike" x="8576" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="93" x="8640" y="1024">
+  <object id="93" name="spike" x="8640" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="94" x="8704" y="1024">
+  <object id="94" name="spike" x="8704" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="95" x="8768" y="1024">
+  <object id="95" name="spike" x="8768" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="96" x="8832" y="1024">
+  <object id="96" name="spike" x="8832" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="97" x="8896" y="1024">
+  <object id="97" name="spike" x="8896" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="57" x="3200" y="960">
+  <object id="57" name="spike" x="3200" y="960">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
   <object id="22" x="3008" y="513.333">
@@ -177,140 +177,140 @@
   <object id="40" x="4928.67" y="927.333">
    <polygon points="0,0 63.3333,0 63.3333,-30.25 0,-30.25"/>
   </object>
-  <object id="51" x="2560" y="960">
+  <object id="51" name="spike" x="2560" y="960">
    <polygon points="0,0 64,0 32,-23"/>
   </object>
-  <object id="52" x="2752" y="960">
+  <object id="52" name="spike" x="2752" y="960">
    <polygon points="0,0 64,0 32,-23.5"/>
   </object>
-  <object id="53" x="2880" y="960">
+  <object id="53" name="spike" x="2880" y="960">
    <polygon points="0,0 64,0 32,-23.5"/>
   </object>
-  <object id="54" x="2944" y="960">
+  <object id="54" name="spike" x="2944" y="960">
    <polygon points="0,0 64,0 32,-23.5"/>
   </object>
-  <object id="55" x="3328" y="960">
+  <object id="55" name="spike" x="3328" y="960">
    <polygon points="0,0 64,0 32,-23.5"/>
   </object>
   <object id="70" name="Portal" x="6272" y="647.5" height="119"/>
   <object id="73" x="7616" y="1024">
    <polygon points="0,0 1344,0 1344,64 0,64"/>
   </object>
-  <object id="98" x="3968" y="704">
+  <object id="98" name="spike" x="3968" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="100" x="4032" y="704">
+  <object id="100" name="spikie" x="4032" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="101" x="4096" y="704">
+  <object id="101" name="spike" x="4096" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="102" x="4160" y="704">
+  <object id="102" name="spike" x="4160" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="103" x="4224" y="704">
+  <object id="103" name="spike" x="4224" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="104" x="4288" y="704">
+  <object id="104" name="spike" x="4288" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="105" x="4352" y="704">
+  <object id="105" name="spike" x="4352" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="106" x="4416" y="704">
+  <object id="106" name="spike" x="4416" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="107" x="4480" y="704">
+  <object id="107" name="spike" x="4480" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="108" x="4544" y="704">
+  <object id="108" name="spike" x="4544" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="109" x="4608" y="704">
+  <object id="109" name="spike" x="4608" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="110" x="4672" y="704">
+  <object id="110" name="spike" x="4672" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="111" x="4736" y="704">
+  <object id="111" name="spike" x="4736" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="112" x="4800" y="704">
+  <object id="112" name="spike" x="4800" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="113" x="4864" y="704">
+  <object id="113" name="spike" x="4864" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="114" x="4928" y="704">
+  <object id="114" name="spike" x="4928" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
-  <object id="99" x="3904" y="704">
+  <object id="99" name="spike" x="3904" y="704">
    <polygon points="0,0 64,0 33,57"/>
   </object>
   <object id="135" x="3904" y="704">
    <polyline points="0,0 0,-64 1088,-64 1088,0 0,0"/>
   </object>
-  <object id="136" x="7680" y="64">
+  <object id="136" name="spike" x="7680" y="64">
    <polygon points="0,0 31.75,55.25 64,0"/>
   </object>
-  <object id="156" x="7616" y="64">
+  <object id="156" name="spike" x="7616" y="64">
    <polygon points="0,0 31.75,55.25 64,0"/>
   </object>
-  <object id="137" x="7744" y="64">
+  <object id="137" name="spike" x="7744" y="64">
    <polyline points="0,0 32,56.75 64,0 0,0"/>
   </object>
-  <object id="138" x="7808" y="64">
+  <object id="138" name="spike" x="7808" y="64">
    <polyline points="0,0 32.25,57 64,0 0,0"/>
   </object>
-  <object id="139" x="7872" y="64">
+  <object id="139" name="spike" x="7872" y="64">
    <polyline points="0,0 32,56.25 64,0 0,0"/>
   </object>
-  <object id="140" x="7936" y="64">
+  <object id="140" name="spike" x="7936" y="64">
    <polyline points="0,0 32.25,56 64,0 0,0"/>
   </object>
-  <object id="141" x="8000" y="64">
+  <object id="141" name="spike" x="8000" y="64">
    <polygon points="0,0 32.75,57 64,0"/>
   </object>
-  <object id="142" x="8064" y="64">
+  <object id="142" name="spike" x="8064" y="64">
    <polygon points="0,0 32.25,56.5 64,0"/>
   </object>
-  <object id="143" x="8128" y="64">
+  <object id="143" name="spike" x="8128" y="64">
    <polygon points="0,0 32,55.75 64,0"/>
   </object>
-  <object id="144" x="8192" y="64">
+  <object id="144" name="spike" x="8192" y="64">
    <polygon points="0,0 32.25,55.75 64,0"/>
   </object>
-  <object id="145" x="8256" y="64">
+  <object id="145" name="spike" x="8256" y="64">
    <polygon points="0,0 31.5,55.5 64,0"/>
   </object>
-  <object id="146" x="8320" y="64">
+  <object id="146" name="spike" x="8320" y="64">
    <polygon points="0,0 32.25,55.75 64,0"/>
   </object>
-  <object id="147" x="8384" y="64">
+  <object id="147" name="spike" x="8384" y="64">
    <polygon points="0,0 31.75,55.25 64,0"/>
   </object>
-  <object id="148" x="8448" y="64">
+  <object id="148" name="spike" x="8448" y="64">
    <polygon points="0,0 32.5,55.75 64,0"/>
   </object>
-  <object id="149" x="8512" y="64">
+  <object id="149" name="spike" x="8512" y="64">
    <polygon points="0,0 32.25,55.5 64,0"/>
   </object>
-  <object id="150" x="8576" y="64">
+  <object id="150" name="spike" x="8576" y="64">
    <polygon points="0,0 32,54.5 64,0"/>
   </object>
-  <object id="151" x="8640" y="64">
+  <object id="151" name="spike" x="8640" y="64">
    <polygon points="0,0 32.25,56 64,0"/>
   </object>
-  <object id="152" x="8704" y="64">
+  <object id="152" name="spike" x="8704" y="64">
    <polygon points="0,0 32,55.75 64,0"/>
   </object>
-  <object id="153" x="8768" y="64">
+  <object id="153" name="spike" x="8768" y="64">
    <polygon points="0,0 33,56.5 64,0"/>
   </object>
-  <object id="154" x="8832" y="64">
+  <object id="154" name="spike" x="8832" y="64">
    <polygon points="0,0 32.25,56.25 64,0"/>
   </object>
-  <object id="155" x="8896" y="64">
+  <object id="155" name="spike" x="8896" y="64">
    <polygon points="0,0 32.25,55.5 64,0"/>
   </object>
   <object id="157" x="7616" y="64">
