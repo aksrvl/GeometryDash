@@ -35,7 +35,6 @@ public class BodyHelperService {
         shape.dispose();
 
         if (!isStatic) {
-            // Adding ground sensor for dynamic bodies (e.g., player)
             addGroundSensor(body, width, height);
         }
 
