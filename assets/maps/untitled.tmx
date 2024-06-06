@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="140" height="17" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="158">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="140" height="17" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="190">
  <tileset firstgid="1" source="Black And Blue Modern Gaming Twitch Banner.tsx"/>
  <tileset firstgid="491" source="tiles1.tsx"/>
  <tileset firstgid="591" source="jump.tsx"/>
@@ -57,14 +57,14 @@
   <object id="47" x="5632" y="960">
    <polygon points="0,0 0,-192 2.66667,-191.333 64,-192 64,0"/>
   </object>
-  <object id="10" x="3008" y="960">
-   <polygon points="0,0 0,-254.667 64,-254.667 64,0 0,0"/>
+  <object id="10" x="3007.87" y="960">
+   <polygon points="0,0 0,-255.667 64.2513,-255.667 64.2513,0 0,0"/>
   </object>
   <object id="11" x="3136" y="960">
    <polygon points="0,0 0,-192 64,-192 64,0"/>
   </object>
   <object id="12" x="3264" y="960">
-   <polygon points="0,0 0,-125.333 64,-125.333 64,0"/>
+   <polygon points="0,0 0,-128.333 64,-128.333 64,0"/>
   </object>
   <object id="13" name="spike" x="448" y="960">
    <polygon points="0,0 31.8182,-56.1818 64,0"/>
@@ -144,38 +144,38 @@
   <object id="57" name="spike" x="3200" y="960">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="22" x="3008" y="513.333">
+  <object id="22" name="spike" x="3008" y="513.333">
    <polygon points="0,0 64,0 64,-129.333 0,-129.333 0,0"/>
   </object>
-  <object id="23" x="3136" y="574.667">
+  <object id="23" name="spike" x="3136" y="574.667">
    <polygon points="0,0 64,0 64,-190.667 0,-190.667"/>
   </object>
-  <object id="24" x="3264" y="638.667">
+  <object id="24" name="spike" x="3264" y="638.667">
    <polygon points="0,0 64.2667,0 64.2667,-254.667 0,-254.667"/>
   </object>
-  <object id="31" x="3392" y="704">
+  <object id="31" name="spike" x="3392" y="704">
    <polygon points="0,0 64.2667,0 64.2667,-254.667 0,-254.667"/>
   </object>
-  <object id="71" x="6976" y="448">
+  <object id="71" name="spike" x="6976" y="448">
    <polygon points="0,0 64.2667,0 64.2667,-448 0,-448"/>
   </object>
-  <object id="72" x="7552" y="1088">
+  <object id="72" name="spike" x="7552" y="1088">
    <polygon points="0,0 64.2667,0 64.2667,-384.667 0,-384.667"/>
   </object>
-  <object id="36" x="3903.42" y="927.167">
-   <polygon points="0,0 65.3333,0 65.3333,-30.25 0,-30.25"/>
+  <object id="36" x="3904.55" y="928.042">
+   <polygon points="0,0 62.8333,0 62.8333,-31.875 0,-31.875"/>
   </object>
-  <object id="65" x="4288.08" y="927.167">
-   <polygon points="0,0 65.3333,0 65.3333,-30.25 0,-30.25"/>
+  <object id="65" x="4288.08" y="928.667">
+   <polygon points="0,0 63.7083,0 63.7083,-32.375 0,-32.375"/>
   </object>
   <object id="48" x="5696" y="800">
    <polygon points="0,0 640.333,0 640.333,-32.25 0,-32.25"/>
   </object>
-  <object id="39" x="4607.33" y="927.333">
-   <polygon points="0,0 63.3333,0 63.3333,-30.25 0,-30.25"/>
+  <object id="39" x="4608.58" y="927.333">
+   <polygon points="0,0 62.0833,0 62.0833,-31.5 0,-31.5"/>
   </object>
-  <object id="40" x="4928.67" y="927.333">
-   <polygon points="0,0 63.3333,0 63.3333,-30.25 0,-30.25"/>
+  <object id="40" x="4928.17" y="927.333">
+   <polygon points="0,0 63.8333,0 63.8333,-30.875 0,-30.875"/>
   </object>
   <object id="51" name="spike" x="2560" y="960">
    <polygon points="0,0 64,0 32,-23"/>
@@ -313,8 +313,65 @@
   <object id="155" name="spike" x="8896" y="64">
    <polygon points="0,0 32.25,55.5 64,0"/>
   </object>
-  <object id="157" x="7616" y="64">
+  <object id="157" name="spike" x="7616" y="64">
    <polygon points="0,0 0,-64 1344,-64 1344,0"/>
+  </object>
+  <object id="168" name="spike" x="1600" y="960">
+   <polygon points="0,0 0,-62.7917 64,-62.7917 64,0"/>
+  </object>
+  <object id="169" name="spike" x="1792" y="960">
+   <polygon points="0,0 0,-126.667 64,-126.667 64,0"/>
+  </object>
+  <object id="170" name="spike" x="2624" y="960">
+   <polygon points="0,0 0,-126.667 64,-126.667 64,0"/>
+  </object>
+  <object id="171" name="spike" x="2432" y="960">
+   <polygon points="0,0 0,-62.7917 64,-62.7917 64,0"/>
+  </object>
+  <object id="172" name="spike" x="2816" y="960">
+   <polygon points="0,0 0,-190.417 64,-190.417 64,0"/>
+  </object>
+  <object id="173" name="spike" x="3008" y="960">
+   <polygon points="0,0 0,-253.292 64,-253.292 64,0"/>
+  </object>
+  <object id="174" name="spike" x="3136" y="960">
+   <polygon points="0,0 0,-190.417 64,-190.417 64,0"/>
+  </object>
+  <object id="175" name="spike" x="3264" y="960">
+   <polygon points="0,0 0,-126.667 64,-126.667 64,0"/>
+  </object>
+  <object id="176" name="spike" x="3392" y="960">
+   <polygon points="0,0 0,-62.7917 64,-62.7917 64,0"/>
+  </object>
+  <object id="178" name="spike" x="3136" y="576">
+   <polygon points="0,0 0,-575.958 64,-575.958 64,0"/>
+  </object>
+  <object id="181" name="spike" x="3904" y="928.625">
+   <polygon points="0,0 0,-31.4167 64,-31.4167 64,0"/>
+  </object>
+  <object id="182" name="spike" x="3904" y="928.625">
+   <polygon points="0,0 0,-31.4167 64,-31.4167 64,0"/>
+  </object>
+  <object id="183" name="spike" x="4288" y="928.75">
+   <polygon points="0,0 0,-31.5417 64,-31.5417 64,0"/>
+  </object>
+  <object id="184" name="spike" x="4608" y="928.875">
+   <polygon points="0,0 0,-31.6667 64,-31.6667 64,0"/>
+  </object>
+  <object id="185" name="spike" x="4928.38" y="928.625">
+   <polygon points="0,0 0,-31.4167 63.625,-31.4167 63.625,0"/>
+  </object>
+  <object id="186" name="spike" x="5248" y="960">
+   <polygon points="0,0 0,-62.7917 64,-62.7917 64,0"/>
+  </object>
+  <object id="187" name="spike" x="5440" y="960">
+   <polygon points="0,0 0,-126.667 64,-126.667 64,0"/>
+  </object>
+  <object id="188" name="spike" x="5632" y="960">
+   <polygon points="0,0 0,-190.417 64,-190.417 64,0"/>
+  </object>
+  <object id="189" name="spike" x="6272" y="640">
+   <polygon points="0,0 0,-190.417 64,-190.417 64,0"/>
   </object>
  </objectgroup>
 </map>
