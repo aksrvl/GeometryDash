@@ -18,6 +18,7 @@ import static Helper.Constants.PPM;
 public class GameScreen extends ScreenAdapter implements ContactListener {
 
     private OrthographicCamera camera;
+    private boolean debug = false;
     private SpriteBatch batch;
     private World world;
     private Box2DDebugRenderer box2DDebugRenderer;
@@ -33,6 +34,7 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         this.world = new World(new Vector2(0, -57f), false);
         this.box2DDebugRenderer = new Box2DDebugRenderer();
         this.tileMapHelper = new TileMapHelper(this);
+
         this.orthogonalTiledMapRenderer = tileMapHelper.setupMap();
     }
 
@@ -64,7 +66,10 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         player.update();
         player.render(batch);
         batch.end();
-        box2DDebugRenderer.render(world, camera.combined.scl(PPM));
+
+        if(debug){
+            box2DDebugRenderer.render(world, camera.combined.scl(PPM));
+        }
     }
 
     public World getWorld() {

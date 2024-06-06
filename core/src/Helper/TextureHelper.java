@@ -40,4 +40,9 @@ public class TextureHelper {
             return playerTexture1;
         }
     }
+    private static void filterTexture(Texture texture){
+        texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
+    }
+
+
 }

@@ -27,6 +27,7 @@ public class Player extends GameEntity {
         onGround = false;
         alternateControl = false; // Initialize alternate control to false
         body.setUserData(this); // Встановлюємо користувацькі дані для тіла
+
     }
 
     @Override
