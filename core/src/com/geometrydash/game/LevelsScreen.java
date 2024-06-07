@@ -18,7 +18,7 @@ public class LevelsScreen implements Screen {
     private static final int RETURN_BUTTON_HEIGHT = 70;
     private static final int CHOSEN_BUTTON_WIDTH = 250;
     private static final int CHOSEN_BUTTON_HEIGHT = 250;
-    private int selectedLevel = -1;
+    public static int selectedLevel = -1;
 
     public LevelsScreen(GeometryDashGame game) {
         this.game = game;

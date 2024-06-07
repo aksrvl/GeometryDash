@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="140" height="17" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="190">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="140" height="17" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="191">
  <tileset firstgid="1" source="Black And Blue Modern Gaming Twitch Banner.tsx"/>
  <tileset firstgid="491" source="tiles1.tsx"/>
  <tileset firstgid="591" source="jump.tsx"/>
@@ -52,9 +52,6 @@
    <polygon points="0,0 0,-128 64,-128 64,0 60.6667,0.666667"/>
   </object>
   <object id="9" x="2816" y="960">
-   <polygon points="0,0 0,-192 2.66667,-191.333 64,-192 64,0"/>
-  </object>
-  <object id="47" x="5632" y="960">
    <polygon points="0,0 0,-192 2.66667,-191.333 64,-192 64,0"/>
   </object>
   <object id="10" x="3007.87" y="960">
@@ -168,7 +165,7 @@
   <object id="65" x="4288.08" y="928.667">
    <polygon points="0,0 63.7083,0 63.7083,-32.375 0,-32.375"/>
   </object>
-  <object id="48" x="5696" y="800">
+  <object id="48" x="5696.09" y="800.25">
    <polygon points="0,0 640.333,0 640.333,-32.25 0,-32.25"/>
   </object>
   <object id="39" x="4608.58" y="927.333">
@@ -372,6 +369,9 @@
   </object>
   <object id="189" name="spike" x="6272" y="640">
    <polygon points="0,0 0,-190.417 64,-190.417 64,0"/>
+  </object>
+  <object id="190" x="5632" y="768">
+   <polygon points="0,0 64,0 64,192 0,192"/>
   </object>
  </objectgroup>
 </map>

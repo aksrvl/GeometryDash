@@ -12,6 +12,7 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
 import com.badlogic.gdx.physics.box2d.Fixture;
+import com.geometrydash.game.LevelsScreen;
 import objects.player.Player;
 import com.geometrydash.game.GameScreen;
 
@@ -27,7 +28,18 @@ public class TileMapHelper {
     }
 
     public OrthogonalTiledMapRenderer setupMap() {
-        tiledMap = new TmxMapLoader().load("maps/untitled.tmx");
+        if(LevelsScreen.selectedLevel==0) {
+            tiledMap = new TmxMapLoader().load("maps/trainingLevel.tmx");
+        }
+        if(LevelsScreen.selectedLevel==1){
+
+        }
+        if(LevelsScreen.selectedLevel==2){
+
+        }
+        if(LevelsScreen.selectedLevel==2){
+
+        }
         parseMapObjects(tiledMap.getLayers().get("objects").getObjects());
         return new OrthogonalTiledMapRenderer(tiledMap);
     }

@@ -7,11 +7,11 @@ import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.physics.box2d.Body;
+import com.geometrydash.game.LevelsScreen;
 
 import static Helper.Constants.PPM;
 
 public class Player extends GameEntity {
-    private float changeY=0;
     private Sprite sprite;
     private float jumpRotation;
     private boolean isJumping;
@@ -21,12 +21,18 @@ public class Player extends GameEntity {
     public Player(float width, float height, Body body) {
         super(width, height, body);
         this.speed = 12f;
-        sprite = new Sprite(TextureHelper.changeTexture());
         jumpRotation = 0;
         isJumping = false;
         onGround = false;
-        alternateControl = false; // Initialize alternate control to false
-        body.setUserData(this); // Встановлюємо користувацькі дані для тіла
+        if(LevelsScreen.selectedLevel==0||LevelsScreen.selectedLevel==1||LevelsScreen.selectedLevel==3) {
+            sprite = new Sprite(TextureHelper.changeTexture());
+            alternateControl = false;
+        }
+        if (LevelsScreen.selectedLevel==2){
+            sprite = new Sprite(TextureHelper.shipTexture());
+            alternateControl=true;
+        }
+        body.setUserData(this);
 
     }
 
@@ -34,7 +40,13 @@ public class Player extends GameEntity {
     public void update() {
         x = body.getPosition().x * PPM;
         y = body.getPosition().y * PPM;
-        sprite.setTexture(TextureHelper.changeTexture());
+        if(alternateControl){
+            jumpRotation=0;
+            sprite.setTexture(TextureHelper.shipTexture());
+        }
+        else {
+            sprite.setTexture(TextureHelper.changeTexture());
+        }
         sprite.setPosition(x - sprite.getWidth() / 2, y - sprite.getHeight() / 2);
         checkUserInput();
         sprite.setRotation(jumpRotation);
