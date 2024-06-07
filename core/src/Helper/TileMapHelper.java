@@ -41,6 +41,7 @@ public class TileMapHelper {
 
         }
         parseMapObjects(tiledMap.getLayers().get("objects").getObjects());
+        parseMapObjects(tiledMap.getLayers().get("spikes").getObjects());
         return new OrthogonalTiledMapRenderer(tiledMap);
     }
 

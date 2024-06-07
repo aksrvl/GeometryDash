@@ -32,7 +32,11 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         this.camera = camera;
         this.game = game;
         this.batch = new SpriteBatch();
-        this.world = new World(new Vector2(0, -57f), false);
+        if(LevelsScreen.selectedLevel==0){
+            this.world = new World(new Vector2(0, -57f), false);
+        } else if (LevelsScreen.selectedLevel==1) {
+            this.world = new World(new Vector2(0, -61f), false);
+        }
         this.box2DDebugRenderer = new Box2DDebugRenderer();
         this.tileMapHelper = new TileMapHelper(this);
 
@@ -125,7 +129,15 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
             Body playerBody = otherFixture.getBody();
             Player player = (Player) playerBody.getUserData();
             if (player != null) {
-                game.playNewMusic("music/trainingLevel.mp3");
+                if(LevelsScreen.selectedLevel==0) {
+                    game.playNewMusic("music/trainingLevel.mp3");
+                } else if (LevelsScreen.selectedLevel==1) {
+                    game.playNewMusic("music/level1.mp3");
+                } else if (LevelsScreen.selectedLevel==2) {
+                    //game.playNewMusic("music/trainingLevel.mp3");
+                } else {
+                    //game.playNewMusic("music/trainingLevel.mp3");
+                }
                 game.setScreen(new GameScreen(camera, game));
             }
         }
