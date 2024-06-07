@@ -17,7 +17,7 @@ import objects.player.Player;
 import static Helper.Constants.PPM;
 
 public class GameScreen extends ScreenAdapter implements ContactListener {
-
+    public static int attempts=1;
     private OrthographicCamera camera;
     private boolean debug = false;
     private SpriteBatch batch;
@@ -138,6 +138,7 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
                 } else {
                     //game.playNewMusic("music/trainingLevel.mp3");
                 }
+                attempts+=1;
                 game.setScreen(new GameScreen(camera, game));
             }
         }
@@ -170,6 +171,7 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
                 LevelsScreen.selectedLevel = -1;
                 game.playNewMusic("music/BackgroundMusic.mp3");
                 game.setScreen(new LevelsScreen(game));
+                attempts=1;
             }
         }
     }
