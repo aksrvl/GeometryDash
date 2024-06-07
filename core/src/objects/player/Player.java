@@ -20,7 +20,15 @@ public class Player extends GameEntity {
 
     public Player(float width, float height, Body body) {
         super(width, height, body);
-        this.speed = 12f;
+        if(LevelsScreen.selectedLevel==0) {
+            this.speed = 12f;
+        } else if (LevelsScreen.selectedLevel==1) {
+            this.speed = 15f;
+        } else if (LevelsScreen.selectedLevel==1) {
+            this.speed = 15f;
+        } else {
+            //this.speed=f;
+        }
         jumpRotation = 0;
         isJumping = false;
         onGround = false;
@@ -73,8 +81,18 @@ public class Player extends GameEntity {
     }
 
     private void checkDefaultControl() {
+        int gravityForce=0;
+        if(LevelsScreen.selectedLevel==0){
+            gravityForce=18;
+        } else if (LevelsScreen.selectedLevel==1) {
+            gravityForce=25;
+        } else if (LevelsScreen.selectedLevel==2) {
+            //gravityForce=;
+        } else {
+            //gravityForce=;
+        }
         if ((Gdx.input.isKeyPressed(Input.Keys.SPACE) || Gdx.input.isButtonPressed(Input.Buttons.LEFT)) && onGround) {
-            float force = body.getMass() * 18;
+            float force = body.getMass() * gravityForce;
             body.applyLinearImpulse(new Vector2(0, force), body.getPosition(), true);
             isJumping = true;
             onGround = false;
