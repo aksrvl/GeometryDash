@@ -32,7 +32,7 @@ public class TileMapHelper {
             tiledMap = new TmxMapLoader().load("maps/trainingLevel.tmx");
         }
         if(LevelsScreen.selectedLevel==1){
-
+            tiledMap = new TmxMapLoader().load("maps/level1.tmx");
         }
         if(LevelsScreen.selectedLevel==2){
 

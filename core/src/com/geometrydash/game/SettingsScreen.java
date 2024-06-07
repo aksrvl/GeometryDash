@@ -128,7 +128,7 @@ public class SettingsScreen implements Screen {
         if (inputX < 800 + BUTTON_WIDTH && inputX > 800 && inputY < 300 + 100 && inputY > 300) {
             game.batch.draw(howToPlayButton, 800-10, 300-20, BUTTON_WIDTH+20, 100+20);
             if (Gdx.input.isTouched()) {
-
+                game.setScreen(new HowToPlayScreen(game));
             }
         } else {
             game.batch.draw(howToPlayButton, 800, 300, BUTTON_WIDTH, 100);

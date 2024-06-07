@@ -64,9 +64,6 @@ public class GeometryDashGame extends Game {
 		}
 	}
 	public void setScreen(Screen screen) {
-		// Stop the background music if it is playing
-		//stopMusic();
-		// Set the new screen
 		super.setScreen(screen);
 	}
 
