@@ -92,7 +92,6 @@ public class LevelsScreen implements Screen {
         } else {
             game.batch.draw(skinTexture, x, y, CHOSEN_BUTTON_WIDTH, CHOSEN_BUTTON_HEIGHT);
         }
-        // Draw the chosen button on the selected skin
         if (selectedLevel == 0) {
             this.dispose();
             game.playNewMusic("music/trainingLevel.mp3");

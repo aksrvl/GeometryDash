@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="140" height="17" tilewidth="64" tileheight="64" infinite="0" nextlayerid="13" nextobjectid="191">
+<map version="1.2" tiledversion="1.2.4" orientation="orthogonal" renderorder="right-down" width="136" height="17" tilewidth="64" tileheight="64" infinite="0" nextlayerid="37" nextobjectid="200">
  <tileset firstgid="1" source="Black And Blue Modern Gaming Twitch Banner.tsx"/>
  <tileset firstgid="491" source="tiles1.tsx"/>
  <tileset firstgid="591" source="jump.tsx"/>
  <tileset firstgid="592" source="hold.tsx"/>
  <tileset firstgid="593" source="fly.tsx"/>
- <layer id="10" name="bg" width="140" height="17">
+ <layer id="33" name="bg" width="136" height="17">
   <data encoding="base64" compression="zlib">
-   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
+   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
   </data>
  </layer>
- <layer id="11" name="text" width="140" height="17">
+ <layer id="34" name="text" width="136" height="17">
   <data encoding="base64" compression="zlib">
-   eJzt2NENABAQRMGjQfTfiS/RgwuSmQJe9nsjAAAAgNNmub0A+F2ree2e2AYAAADYxsP/wwKuzQHy
+   eJzt2EENACAMBMGCQcC/E15V0dCQGQGbe18EAAAA/O+O1wuA7tasa+/CNgAAANDTafQHJLoeAfI=
   </data>
  </layer>
- <layer id="1" name="Tile Layer 1" width="140" height="17">
+ <layer id="35" name="Tile Layer 1" width="136" height="17">
   <data encoding="base64" compression="zlib">
-   eJztmI0KhCAQBrP3f9PjiOgFQo5A+lF3by2XZuBDEcNtGQkaBr98Q370hKTm2r1xn3U8gy95lmAfz+ALSMAXkIAvIAFfQAK+gIS3+gL/gS+gAV9AQ6n3Pf7nxJf2aHvc439Oa1/w70faBw/fn1jbOJaDL+do3uPMkXTemzdX9dY+Y13DXXyMztT2L54/h+N83q2n47aeI97n2vXatZLTJbz4MgXSSyzZ7pB1nu4RaedLi6yQbIZC
+   eJztmtEKgzAMRa3//6cyhvi2JylboGyuzdKkS8o9cFFK1RiOCsVlicst1beR+KVm7tw8T5r7K5GBH3WOJA/88IWFHz3AD1/AD33ghx3wwxfwQx/4YQf88IW3mmfwg7D24zGgT/DDHrw/9JjRD6LV6551Rcromkczgx/SnvasK1K00faj93xR/SjvO8L3JNe2ru3AjyeSuq+cKPe9efKtXu4x2jVI4PixKdUs7Ve+/p4+9/e38XJL4zXy88od5461HG7h1Q/ETzShZ0aaf/cCsfdD4/+PE5vSkLU=
   </data>
  </layer>
- <layer id="12" name="portal" width="140" height="17">
+ <layer id="36" name="portal" width="136" height="17">
   <data encoding="base64" compression="zlib">
-   eJztzrEJADAIADDt4v8HC/7QRYTkgkQAAAAAAAC/OrcHXFJvewAAAAw6xwEI
+   eJztzjERADAIBDDKgn/BvUMGPyQKUgUAAAAAALn+ux6QbPp6AAAA+RbHKAEI
   </data>
  </layer>
  <objectgroup id="3" name="objects">
@@ -120,24 +120,6 @@
   <object id="91" name="spike" x="8512" y="1024">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
-  <object id="92" name="spike" x="8576" y="1024">
-   <polygon points="0,0 31.4545,-55.8182 64,0"/>
-  </object>
-  <object id="93" name="spike" x="8640" y="1024">
-   <polygon points="0,0 31.4545,-55.8182 64,0"/>
-  </object>
-  <object id="94" name="spike" x="8704" y="1024">
-   <polygon points="0,0 31.4545,-55.8182 64,0"/>
-  </object>
-  <object id="95" name="spike" x="8768" y="1024">
-   <polygon points="0,0 31.4545,-55.8182 64,0"/>
-  </object>
-  <object id="96" name="spike" x="8832" y="1024">
-   <polygon points="0,0 31.4545,-55.8182 64,0"/>
-  </object>
-  <object id="97" name="spike" x="8896" y="1024">
-   <polygon points="0,0 31.4545,-55.8182 64,0"/>
-  </object>
   <object id="57" name="spike" x="3200" y="960">
    <polygon points="0,0 31.4545,-55.8182 64,0"/>
   </object>
@@ -191,7 +173,7 @@
   </object>
   <object id="70" name="Portal" x="6272" y="647.5" height="119"/>
   <object id="73" x="7616" y="1024">
-   <polygon points="0,0 1344,0 1344,64 0,64"/>
+   <polygon points="0,0 960,0 960,64 0,64"/>
   </object>
   <object id="98" name="spike" x="3968" y="704">
    <polygon points="0,0 64,0 33,57"/>
@@ -292,26 +274,8 @@
   <object id="149" name="spike" x="8512" y="64">
    <polygon points="0,0 32.25,55.5 64,0"/>
   </object>
-  <object id="150" name="spike" x="8576" y="64">
-   <polygon points="0,0 32,54.5 64,0"/>
-  </object>
-  <object id="151" name="spike" x="8640" y="64">
-   <polygon points="0,0 32.25,56 64,0"/>
-  </object>
-  <object id="152" name="spike" x="8704" y="64">
-   <polygon points="0,0 32,55.75 64,0"/>
-  </object>
-  <object id="153" name="spike" x="8768" y="64">
-   <polygon points="0,0 33,56.5 64,0"/>
-  </object>
-  <object id="154" name="spike" x="8832" y="64">
-   <polygon points="0,0 32.25,56.25 64,0"/>
-  </object>
-  <object id="155" name="spike" x="8896" y="64">
-   <polygon points="0,0 32.25,55.5 64,0"/>
-  </object>
   <object id="157" name="spike" x="7616" y="64">
-   <polygon points="0,0 0,-64 1344,-64 1344,0"/>
+   <polygon points="0,0 0,-64 958.667,-64 958.667,0"/>
   </object>
   <object id="168" name="spike" x="1600" y="960">
    <polygon points="0,0 0,-62.7917 64,-62.7917 64,0"/>
@@ -372,6 +336,15 @@
   </object>
   <object id="190" x="5632" y="768">
    <polygon points="0,0 64,0 64,192 0,192"/>
+  </object>
+  <object id="191" name="end" x="8576" y="0">
+   <polygon points="0,0 128,0 128,1088 0,1088"/>
+  </object>
+  <object id="198" name="spike" x="6336" y="0">
+   <polygon points="0,0 1280,0 1279.67,2.66667 0.666667,4"/>
+  </object>
+  <object id="199" name="spike" x="6336" y="1088">
+   <polygon points="0,0 1216,0 1216,-2.72727 -0.181818,-3.27273"/>
   </object>
  </objectgroup>
 </map>

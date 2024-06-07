@@ -55,6 +55,8 @@ public class TileMapHelper {
 
                 } else if (polygonName.equals("spike")) {
                     createSpike((PolygonMapObject) mapObject);
+                } else if (polygonName.equals("end")) {
+                    endLevel((PolygonMapObject) mapObject);
                 }
             }
 
@@ -119,6 +121,20 @@ public class TileMapHelper {
 
         for (Fixture fixture : BodyHelperService.createStaticBody(gameScreen.getWorld(), worldVertices).getFixtureList()) {
             fixture.setUserData("spike");
+        }
+    }
+
+    private void endLevel(PolygonMapObject polygonMapObject) {
+        float[] vertices = polygonMapObject.getPolygon().getTransformedVertices();
+        Vector2[] worldVertices = new Vector2[vertices.length / 2];
+
+        for (int i = 0; i < vertices.length / 2; i++) {
+            Vector2 current = new Vector2(vertices[i * 2] / PPM, vertices[i * 2 + 1] / PPM);
+            worldVertices[i] = current;
+        }
+
+        for (Fixture fixture : BodyHelperService.createStaticBody(gameScreen.getWorld(), worldVertices).getFixtureList()) {
+            fixture.setUserData("end");
         }
     }
 }

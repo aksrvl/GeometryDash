@@ -16,7 +16,7 @@ public class Player extends GameEntity {
     private float jumpRotation;
     private boolean isJumping;
     private boolean onGround;
-    private boolean alternateControl; // New field for alternate control
+    private boolean alternateControl;
 
     public Player(float width, float height, Body body) {
         super(width, height, body);
@@ -24,7 +24,7 @@ public class Player extends GameEntity {
             this.speed = 12f;
         } else if (LevelsScreen.selectedLevel==1) {
             this.speed = 15f;
-        } else if (LevelsScreen.selectedLevel==1) {
+        } else if (LevelsScreen.selectedLevel==2) {
             this.speed = 15f;
         } else {
             //this.speed=f;

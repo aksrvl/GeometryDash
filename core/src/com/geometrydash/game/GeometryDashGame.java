@@ -13,7 +13,7 @@ public class GeometryDashGame extends Game {
 	private int widthScreen, heightScreen;
 	public OrthographicCamera orthographicCamera;
 	public SpriteBatch batch;
-	private Music backgroundMusic;
+	public Music backgroundMusic;
 	private Preferences preferences;
 
 	public GeometryDashGame(){

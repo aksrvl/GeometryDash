@@ -4,6 +4,7 @@ import Helper.TileMapHelper;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
 import com.badlogic.gdx.ScreenAdapter;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -112,15 +113,18 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
             handleSpikeContact(fixtureA, fixtureB, isBegin);
         } else if (fixtureB.getUserData() != null && fixtureB.getUserData().equals("spike")) {
             handleSpikeContact(fixtureB, fixtureA, isBegin);
+        } else if (fixtureA.getUserData() != null && fixtureA.getUserData().equals("end")) {
+            endLevel(fixtureA, fixtureB, isBegin);
+        } else if (fixtureB.getUserData() != null && fixtureB.getUserData().equals("end")) {
+            endLevel(fixtureB, fixtureA, isBegin);
         }
     }
 
     private void handleSpikeContact(Fixture spikeFixture, Fixture otherFixture, boolean isBegin) {
-        if (isBegin) { // Ensure this only triggers when contact begins
+        if (isBegin) { //тільки кщо починається контакт
             Body playerBody = otherFixture.getBody();
             Player player = (Player) playerBody.getUserData();
             if (player != null) {
-                //todo restart game
                 game.playNewMusic("music/trainingLevel.mp3");
                 game.setScreen(new GameScreen(camera, game));
             }
@@ -144,6 +148,20 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
             }
         }
     }
+
+    private void endLevel(Fixture sensorFixture, Fixture otherFixture, boolean isBegin){
+        if (isBegin) {
+            Body playerBody = otherFixture.getBody();
+            Player player = (Player) playerBody.getUserData();
+            if (player != null) {
+                this.dispose();
+                LevelsScreen.selectedLevel = -1;
+                game.playNewMusic("music/BackgroundMusic.mp3");
+                game.setScreen(new LevelsScreen(game));
+            }
+        }
+    }
+
 
     @Override
     public void preSolve(Contact contact, Manifold oldManifold) {}

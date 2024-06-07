@@ -79,7 +79,6 @@ public class MenuGame implements Screen {
             if(Gdx.input.isTouched()){
                 this.dispose();
                 game.setScreen(new LevelsScreen(game));
-                //game.setScreen(new GameScreen(camera, game));
             }
         }else{
             game.batch.draw(playButton, play_x, play_y, PLAY_BUTTON_WIDTH, PLAY_BUTTON_HEIGHT);
@@ -142,7 +141,5 @@ public class MenuGame implements Screen {
     public void dispose() {
         backgroundTexture.dispose();
     }
-
-
 
 }
