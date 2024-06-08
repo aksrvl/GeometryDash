@@ -7,8 +7,10 @@ import com.badlogic.gdx.ScreenAdapter;
 import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
+import com.badlogic.gdx.math.Matrix4;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.physics.box2d.*;
@@ -27,6 +29,9 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
     private TileMapHelper tileMapHelper;
     private final GeometryDashGame game;
     private Player player;
+    Texture exitButton;
+    private static final int EXIT_BUTTON_WIDTH = 160;
+    private static final int EXIT_BUTTON_HEIGHT = 90;
 
     public GameScreen(OrthographicCamera camera, GeometryDashGame game){
         this.camera = camera;
@@ -42,7 +47,7 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         }
         this.box2DDebugRenderer = new Box2DDebugRenderer();
         this.tileMapHelper = new TileMapHelper(this);
-
+        exitButton = new Texture("ExitButtonCr.png");
         this.orthogonalTiledMapRenderer = tileMapHelper.setupMap();
     }
 
@@ -64,18 +69,47 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         camera.update();
     }
 
+
     @Override
     public void render(float delta) {
         this.update();
-        Gdx.gl.glClearColor(0,0,0,1);
+        Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         orthogonalTiledMapRenderer.render();
+
+        batch.setProjectionMatrix(camera.combined); // Set projection matrix for world rendering
         batch.begin();
         player.update();
         player.render(batch);
         batch.end();
 
-        if(debug){
+        // Draw the exit button in screen coordinates
+        batch.getProjectionMatrix().setToOrtho2D(0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        batch.begin();
+
+        int inputX = Gdx.input.getX();
+        int inputY = Gdx.graphics.getHeight() - Gdx.input.getY();
+        // Define the position of the exit button in screen coordinates
+        int exit_X = 1770;
+        int exit_Y = 1000;
+
+        // Draw the exit button at a fixed position on the screen
+        batch.draw(exitButton, exit_X, exit_Y, EXIT_BUTTON_WIDTH, EXIT_BUTTON_HEIGHT);
+
+        // Check if the mouse/touch is over the exit button
+        if (inputX < exit_X + EXIT_BUTTON_WIDTH && inputX > exit_X && inputY < exit_Y + EXIT_BUTTON_HEIGHT && inputY > exit_Y) {
+            // If mouse/touch is over the button, and it's clicked, change the screen
+            if (Gdx.input.justTouched()) {
+                LevelsScreen.selectedLevel = -1;
+                game.playNewMusic("music/BackgroundMusic.mp3");
+                this.dispose();
+                game.setScreen(new LevelsScreen(game));
+            }
+        }
+
+        batch.end();
+
+        if (debug) {
             box2DDebugRenderer.render(world, camera.combined.scl(PPM));
         }
     }
@@ -173,8 +207,7 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
                 this.dispose();
                 LevelsScreen.selectedLevel = -1;
                 game.playNewMusic("music/BackgroundMusic.mp3");
-                game.setScreen(new LevelsScreen(game));
-                attempts=1;
+                game.setScreen(new WinScreen(game));
             }
         }
     }

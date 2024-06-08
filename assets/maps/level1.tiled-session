@@ -3,6 +3,7 @@
     "expandedProjectPaths": [
         "."
     ],
+    "file.lastUsedOpenFilter": "All Files (*)",
     "fileStates": {
         "Black And Blue Modern Gaming Twitch Banner.tsx": {
             "scaleInDock": 1
@@ -29,11 +30,15 @@
             "scaleInDock": 1
         },
         "level1.tmx": {
-            "scale": 0.33,
-            "selectedLayer": 0,
+            "expandedObjectLayers": [
+                2,
+                4
+            ],
+            "scale": 0.75,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 10330.30303030303,
-                "y": 345.4545454545455
+                "x": 24192.666666666664,
+                "y": 636
             }
         },
         "level1.tsx": {
@@ -59,6 +64,14 @@
         "tiles1.tsx": {
             "scaleInDock": 1
         },
+        "trainingLevel.tmx": {
+            "scale": 0.33,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 7398.484848484848,
+                "y": 312.12121212121224
+            }
+        },
         "untitled.tmx": {
             "scale": 0.07877790178571428,
             "selectedLayer": 0,
@@ -78,6 +91,7 @@
     ],
     "project": "level1.tiled-project",
     "recentFiles": [
+        "trainingLevel.tmx",
         "lvl1.tsx",
         "lvl1bg2.0.tsx",
         "level1.tsx",

@@ -48,12 +48,11 @@ public class MenuGame implements Screen {
 
     @Override
     public void render(float delta) {
-        // Clear the screen
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(Gdx.gl.GL_COLOR_BUFFER_BIT);
-        // Update the camera
+
         camera.update();
-        // Render the background
+
         game.batch.setProjectionMatrix(camera.combined);
 
         game.batch.begin();
