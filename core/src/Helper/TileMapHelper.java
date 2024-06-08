@@ -32,12 +32,12 @@ public class TileMapHelper {
             tiledMap = new TmxMapLoader().load("maps/trainingLevel.tmx");
         }
         if(LevelsScreen.selectedLevel==1){
-            tiledMap = new TmxMapLoader().load("maps/level1.tmx");
-        }
-        if(LevelsScreen.selectedLevel==2){
 
         }
         if(LevelsScreen.selectedLevel==2){
+            tiledMap = new TmxMapLoader().load("maps/level1.tmx");
+        }
+        if(LevelsScreen.selectedLevel==3){
 
         }
         parseMapObjects(tiledMap.getLayers().get("objects").getObjects());

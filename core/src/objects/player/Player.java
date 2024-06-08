@@ -32,11 +32,11 @@ public class Player extends GameEntity {
         jumpRotation = 0;
         isJumping = false;
         onGround = false;
-        if(LevelsScreen.selectedLevel==0||LevelsScreen.selectedLevel==1||LevelsScreen.selectedLevel==3) {
+        if(LevelsScreen.selectedLevel==0||LevelsScreen.selectedLevel==2||LevelsScreen.selectedLevel==3) {
             sprite = new Sprite(TextureHelper.changeTexture());
             alternateControl = false;
         }
-        if (LevelsScreen.selectedLevel==2){
+        if (LevelsScreen.selectedLevel==1){
             sprite = new Sprite(TextureHelper.shipTexture());
             alternateControl=true;
         }
@@ -85,9 +85,9 @@ public class Player extends GameEntity {
         if(LevelsScreen.selectedLevel==0){
             gravityForce=18;
         } else if (LevelsScreen.selectedLevel==1) {
-            gravityForce=25;
+            //gravityForce=25;
         } else if (LevelsScreen.selectedLevel==2) {
-            //gravityForce=;
+            gravityForce=25;
         } else {
             //gravityForce=;
         }
