@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="480" height="17" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="263">
+<map version="1.10" tiledversion="1.10.2" orientation="orthogonal" renderorder="right-down" width="480" height="17" tilewidth="64" tileheight="64" infinite="0" nextlayerid="5" nextobjectid="267">
  <tileset firstgid="1" source="lvl1bg.tsx"/>
  <tileset firstgid="491" source="lvl1bg2.0.tsx"/>
  <tileset firstgid="981" source="level1.tsx"/>
@@ -143,8 +143,8 @@
   <object id="184" name="spike" x="25408" y="832">
    <polygon points="0,0 128,0 128.5,-35.3913 0.5,-34.8998"/>
   </object>
-  <object id="190" name="spike" x="21440" y="960">
-   <polygon points="0,0 0,-319.354 64,-319.354 64,0"/>
+  <object id="264" name="spike" x="21440" y="960">
+   <polygon points="0,0 0,-317.354 64,-317.354 64,0"/>
   </object>
   <object id="191" name="spike" x="21248" y="960">
    <polygon points="0,0 0,-255.5 64,-255.5 64,0"/>
@@ -197,10 +197,19 @@
   <object id="197" name="spike" x="15424" y="960">
    <polygon points="0,0 256,0 256,-383.521 0,-383.521"/>
   </object>
+  <object id="263" name="spike" x="21632" y="960">
+   <polygon points="0,0 0,-382.773 64,-382.773 64,0"/>
+  </object>
+  <object id="265" name="spike" x="21824" y="960">
+   <polygon points="0,0 0,-446.417 64,-446.417 64,0"/>
+  </object>
+  <object id="266" name="spike" x="22016" y="960">
+   <polygon points="0,0 0,-510.75 64,-510.75 64,0"/>
+  </object>
  </objectgroup>
  <objectgroup id="2" name="objects">
   <object id="2" x="640" y="1090.98">
-   <polygon points="0,0 0,-133.963 28800.2,-133.963 28800.2,0"/>
+   <polygon points="0,0 0,-131.296 28800.2,-131.296 28800.2,0"/>
   </object>
   <object id="5" name="player" x="1088" y="896" width="64" height="64"/>
   <object id="6" name="spike" x="2240" y="960">
@@ -557,11 +566,8 @@
   <object id="122" x="21248" y="960">
    <polygon points="0,0 0,-256 64,-256 64,0"/>
   </object>
-  <object id="123" x="21440" y="960">
-   <polygon points="0,0 0,-320.042 64,-320.042 64,0"/>
-  </object>
-  <object id="124" x="21632" y="960">
-   <polygon points="0,0 0,-384 64,-384 64,0"/>
+  <object id="123" x="21632" y="960">
+   <polygon points="0,0 0,-384.337 64,-384.337 64,0"/>
   </object>
   <object id="116" x="21824" y="960">
    <polygon points="0,0 0,-448.167 64,-448.167 64,0"/>
@@ -628,6 +634,9 @@
   </object>
   <object id="259" x="28544" y="768">
    <polygon points="0,0 832,0 831.75,37.75 0.75,37.5"/>
+  </object>
+  <object id="190" x="21440" y="960">
+   <polygon points="0,0 0,-319.854 64,-319.854 64,0"/>
   </object>
  </objectgroup>
 </map>

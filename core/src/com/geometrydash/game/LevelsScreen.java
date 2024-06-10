@@ -97,7 +97,9 @@ public class LevelsScreen implements Screen {
             game.playNewMusic("music/trainingLevel.mp3");
             game.setScreen(new GameScreen(camera, game));
         }else if(selectedLevel == 1){
-
+            this.dispose();
+            game.playNewMusic("music/level2.mp3");
+            game.setScreen(new GameScreen(camera, game));
         }else if(selectedLevel == 2){
             this.dispose();
             game.playNewMusic("music/level1.mp3");

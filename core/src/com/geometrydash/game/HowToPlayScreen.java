@@ -34,9 +34,10 @@ public class HowToPlayScreen implements Screen {
         exitButton = new Texture("ExitButtonCr.png");
         play_1 = new Texture("howToPlay1.png");
         play_2 = new Texture("howToPlay2.png");
+        play_3 = new Texture("howToPlay3.png");
         nextButton = new Texture("nextButton.png");
         backgroundTexture = new Texture(Gdx.files.internal("howToPlayBg.png"));
-        playScreens = new Texture[] { play_1, play_2, play_2 };
+        playScreens = new Texture[] { play_1, play_2, play_3 };
     }
 
     @Override
