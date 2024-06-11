@@ -27,7 +27,7 @@ public class Player extends GameEntity {
         } else if (LevelsScreen.selectedLevel==2) {
             this.speed = 15f;
         } else {
-            //this.speed=f;
+            this.speed=18f;
         }
         jumpRotation = 0;
         isJumping = false;
@@ -89,7 +89,7 @@ public class Player extends GameEntity {
         } else if (LevelsScreen.selectedLevel==2) {
             gravityForce=25;
         } else {
-            //gravityForce=;
+            gravityForce=25;
         }
         if ((Gdx.input.isKeyPressed(Input.Keys.SPACE) || Gdx.input.isButtonPressed(Input.Buttons.LEFT)) && onGround) {
             float force = body.getMass() * gravityForce;

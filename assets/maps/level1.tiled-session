@@ -12,6 +12,10 @@
         "Black And Blue Modern Gaming Twitch Banner.tsx": {
             "scaleInDock": 1
         },
+        "bg.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "bg1.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -38,11 +42,11 @@
                 2,
                 4
             ],
-            "scale": 0.25,
-            "selectedLayer": 0,
+            "scale": 5.5,
+            "selectedLayer": 3,
             "viewCenter": {
-                "x": 21366,
-                "y": 992
+                "x": 21637,
+                "y": 586.9090909090909
             }
         },
         "level1.tsx": {
@@ -59,6 +63,14 @@
             "viewCenter": {
                 "x": 440.90909090909076,
                 "y": 530.3030303030305
+            }
+        },
+        "level3.tmx": {
+            "scale": 0.125,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": -2476,
+                "y": 512
             }
         },
         "lvl1.tsx": {
@@ -85,15 +97,27 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "lvl3bg.tsx": {
+            "scaleInDock": 0.75,
+            "scaleInEditor": 1
+        },
+        "lvl3bg2.0.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "tiles.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
         "tiles1.tsx": {
             "scaleInDock": 1
         },
         "trainingLevel.tmx": {
             "scale": 0.33,
-            "selectedLayer": 0,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 7398.484848484848,
-                "y": 312.12121212121224
+                "x": 8786.363636363636,
+                "y": 306.0606060606061
             }
         },
         "untitled.tmx": {
@@ -119,18 +143,18 @@
     ],
     "project": "level1.tiled-project",
     "recentFiles": [
+        "trainingLevel.tmx",
+        "bg.tsx",
+        "tiles.tsx",
+        "lvl3bg2.0.tsx",
+        "lvl3bg.tsx",
+        "level3.tmx",
+        "level1.tmx",
         "lvl2bg2.0.tsx",
         "lvl2bg.tsx",
         "lvl2.tsx",
         "level2.tmx",
-        "level1.tmx",
-        "lvl1.tsx",
-        "level1.tsx",
-        "trainingLevel.tmx",
-        "lvl1bg2.0.tsx",
-        "lvl1bg.tsx",
-        "untitled.tmx",
-        "bggg.tsx"
+        "lvl1.tsx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

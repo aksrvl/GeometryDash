@@ -38,7 +38,7 @@ public class TileMapHelper {
             tiledMap = new TmxMapLoader().load("maps/level1.tmx");
         }
         if(LevelsScreen.selectedLevel==3){
-
+            tiledMap = new TmxMapLoader().load("maps/level3.tmx");
         }
         parseMapObjects(tiledMap.getLayers().get("objects").getObjects());
         parseMapObjects(tiledMap.getLayers().get("spikes").getObjects());

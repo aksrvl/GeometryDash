@@ -44,6 +44,8 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
         }
         else if (LevelsScreen.selectedLevel==2) {
             this.world = new World(new Vector2(0, -61f), false);
+        } else if (LevelsScreen.selectedLevel==3) {
+            this.world = new World(new Vector2(0, -61f), false);
         }
         this.box2DDebugRenderer = new Box2DDebugRenderer();
         this.tileMapHelper = new TileMapHelper(this);
@@ -104,6 +106,7 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
                 game.playNewMusic("music/BackgroundMusic.mp3");
                 this.dispose();
                 game.setScreen(new LevelsScreen(game));
+                attempts=1;
             }
         }
 
@@ -173,7 +176,7 @@ public class GameScreen extends ScreenAdapter implements ContactListener {
                 } else if (LevelsScreen.selectedLevel==2) {
                     game.playNewMusic("music/level1.mp3");
                 } else {
-                    //game.playNewMusic("music/trainingLevel.mp3");
+                    game.playNewMusic("music/level3.mp3");
                 }
                 attempts+=1;
                 game.setScreen(new GameScreen(camera, game));
