@@ -5,6 +5,9 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 
+/**
+ * LevelsScreen class represents the screen where players can select different levels to play.
+ */
 public class LevelsScreen implements Screen {
     final GeometryDashGame game;
     public OrthographicCamera camera;
@@ -20,6 +23,11 @@ public class LevelsScreen implements Screen {
     private static final int CHOSEN_BUTTON_HEIGHT = 250;
     public static int selectedLevel = -1;
 
+    /**
+     * Constructs a new LevelsScreen.
+     *
+     * @param game the Geometry Dash game instance
+     */
     public LevelsScreen(GeometryDashGame game) {
         this.game = game;
         int screenWidth = Gdx.graphics.getWidth();
@@ -39,20 +47,21 @@ public class LevelsScreen implements Screen {
 
     @Override
     public void show() {
-
+        // This method is called when the screen is shown
     }
 
     @Override
     public void render(float v) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(Gdx.gl.GL_COLOR_BUFFER_BIT);
+
         // Update the camera
         camera.update();
-        // Render the background
         game.batch.setProjectionMatrix(camera.combined);
 
         game.batch.begin();
 
+        // Draw the background
         game.batch.draw(backgroundTexture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         int return_x = 30;
@@ -70,8 +79,6 @@ public class LevelsScreen implements Screen {
             game.batch.draw(returnButton, return_x, return_y, RETURN_BUTTON_WIDTH, RETURN_BUTTON_HEIGHT);
         }
 
-        //game.batch.draw(levelButton_0, 330, 400, CHOSEN_BUTTON_WIDTH, CHOSEN_BUTTON_HEIGHT);
-
         renderSkinButton(330, 400, levelButton_0, 0);
         renderSkinButton(700, 400, levelButton_1, 1);
         renderSkinButton(1070, 400, levelButton_2, 2);
@@ -80,6 +87,14 @@ public class LevelsScreen implements Screen {
         game.batch.end();
     }
 
+    /**
+     * Renders a level selection button.
+     *
+     * @param x the x-coordinate of the button
+     * @param y the y-coordinate of the button
+     * @param skinTexture the texture of the button
+     * @param skinIndex the index of the level associated with the button
+     */
     private void renderSkinButton(int x, int y, Texture skinTexture, int skinIndex) {
         int inputX = Gdx.input.getX();
         int inputY = Gdx.graphics.getHeight() - Gdx.input.getY();
@@ -87,7 +102,7 @@ public class LevelsScreen implements Screen {
         if (inputX < x + CHOSEN_BUTTON_WIDTH && inputX > x && inputY < y + CHOSEN_BUTTON_HEIGHT && inputY > y) {
             game.batch.draw(skinTexture, x - 10, y - 20, CHOSEN_BUTTON_WIDTH + 20, CHOSEN_BUTTON_HEIGHT + 20);
             if (Gdx.input.isTouched()) {
-                selectedLevel = skinIndex; // Update the selected skin index
+                selectedLevel = skinIndex; // Update the selected level index
             }
         } else {
             game.batch.draw(skinTexture, x, y, CHOSEN_BUTTON_WIDTH, CHOSEN_BUTTON_HEIGHT);
@@ -113,7 +128,7 @@ public class LevelsScreen implements Screen {
 
     @Override
     public void resize(int i, int i1) {
-
+        // This method is called when the screen is resized
     }
 
     @Override

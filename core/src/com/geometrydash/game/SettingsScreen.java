@@ -14,6 +14,9 @@ import com.badlogic.gdx.scenes.scene2d.ui.Table;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 import com.badlogic.gdx.utils.viewport.ScreenViewport;
 
+/**
+ * The screen for adjusting game settings.
+ */
 public class SettingsScreen implements Screen {
     final GeometryDashGame game;
     public OrthographicCamera camera;
@@ -30,6 +33,11 @@ public class SettingsScreen implements Screen {
     private static final int RETURN_BUTTON_WIDTH = 140;
     private static final int RETURN_BUTTON_HEIGHT = 70;
 
+    /**
+     * Constructs a new SettingsScreen.
+     *
+     * @param game The GeometryDashGame instance.
+     */
     public SettingsScreen(GeometryDashGame game){
         this.game = game;
         int screenWidth = Gdx.graphics.getWidth();
@@ -47,7 +55,6 @@ public class SettingsScreen implements Screen {
         // Set up the stage and skin
         stage = new Stage(new ScreenViewport());
         skin = new Skin(Gdx.files.internal("uiskin.json")); // Load the skin file
-
 
         // Create a volume slider using the skin
         volumeSlider = new Slider(0, 1, 0.01f, false, skin);
@@ -77,7 +84,7 @@ public class SettingsScreen implements Screen {
 
     @Override
     public void show() {
-
+        // Implementation not needed for this screen.
     }
 
     @Override
@@ -152,17 +159,17 @@ public class SettingsScreen implements Screen {
 
     @Override
     public void pause() {
-
+        // Implementation not needed for this screen.
     }
 
     @Override
     public void resume() {
-
+        // Implementation not needed for this screen.
     }
 
     @Override
     public void hide() {
-
+        // Implementation not needed for this screen.
     }
 
     @Override

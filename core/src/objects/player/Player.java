@@ -11,20 +11,31 @@ import com.geometrydash.game.LevelsScreen;
 
 import static Helper.Constants.PPM;
 
+/**
+ * Represents the player in the game.
+ */
 public class Player extends GameEntity {
+
     private Sprite sprite;
     private float jumpRotation;
     private boolean isJumping;
     private boolean onGround;
     private boolean alternateControl;
 
+    /**
+     * Constructs a player with the given width, height, and Box2D body.
+     *
+     * @param width The width of the player.
+     * @param height The height of the player.
+     * @param body The Box2D body representing the player.
+     */
     public Player(float width, float height, Body body) {
         super(width, height, body);
-        if(LevelsScreen.selectedLevel==0) {
+        if (LevelsScreen.selectedLevel == 0) {
             this.speed = 12f;
-        } else if (LevelsScreen.selectedLevel==1) {
+        } else if (LevelsScreen.selectedLevel == 1) {
             this.speed = 15f;
-        } else if (LevelsScreen.selectedLevel==2) {
+        } else if (LevelsScreen.selectedLevel == 2) {
             this.speed = 15f;
         } else {
             this.speed=18f;
@@ -32,27 +43,25 @@ public class Player extends GameEntity {
         jumpRotation = 0;
         isJumping = false;
         onGround = false;
-        if(LevelsScreen.selectedLevel==0||LevelsScreen.selectedLevel==2||LevelsScreen.selectedLevel==3) {
+        if (LevelsScreen.selectedLevel == 0 || LevelsScreen.selectedLevel == 2 || LevelsScreen.selectedLevel == 3) {
             sprite = new Sprite(TextureHelper.changeTexture());
             alternateControl = false;
         }
-        if (LevelsScreen.selectedLevel==1){
+        if (LevelsScreen.selectedLevel == 1) {
             sprite = new Sprite(TextureHelper.shipTexture());
-            alternateControl=true;
+            alternateControl = true;
         }
         body.setUserData(this);
-
     }
 
     @Override
     public void update() {
         x = body.getPosition().x * PPM;
         y = body.getPosition().y * PPM;
-        if(alternateControl){
-            jumpRotation=0;
+        if (alternateControl) {
+            jumpRotation = 0;
             sprite.setTexture(TextureHelper.shipTexture());
-        }
-        else {
+        } else {
             sprite.setTexture(TextureHelper.changeTexture());
         }
         sprite.setPosition(x - sprite.getWidth() / 2, y - sprite.getHeight() / 2);
@@ -65,6 +74,11 @@ public class Player extends GameEntity {
         sprite.draw(batch);
     }
 
+    /**
+     * Sets whether the player is on the ground.
+     *
+     * @param onGround true if the player is on the ground, false otherwise.
+     */
     public void setOnGround(boolean onGround) {
         this.onGround = onGround;
         if (onGround) {
@@ -75,19 +89,19 @@ public class Player extends GameEntity {
     private void checkUserInput() {
         if (alternateControl) {
             checkAlternateControl();
-        } else if (!alternateControl){
+        } else {
             checkDefaultControl();
         }
     }
 
     private void checkDefaultControl() {
-        int gravityForce=0;
-        if(LevelsScreen.selectedLevel==0){
-            gravityForce=18;
-        } else if (LevelsScreen.selectedLevel==1) {
-            //gravityForce=25;
-        } else if (LevelsScreen.selectedLevel==2) {
-            gravityForce=25;
+        int gravityForce = 0;
+        if (LevelsScreen.selectedLevel == 0) {
+            gravityForce = 18;
+        } else if (LevelsScreen.selectedLevel == 1) {
+            // Handle level 1 gravity force
+        } else if (LevelsScreen.selectedLevel == 2) {
+            gravityForce = 25;
         } else {
             gravityForce=25;
         }
@@ -118,13 +132,16 @@ public class Player extends GameEntity {
     }
 
     private void checkAlternateControl() {
-        if (Gdx.input.isKeyPressed(Input.Keys.SPACE)|| Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.SPACE) || Gdx.input.isButtonPressed(Input.Buttons.LEFT)) {
             body.setLinearVelocity(speed, 12);
         } else {
             body.setLinearVelocity(speed, -12);
         }
     }
 
+    /**
+     * Toggles between alternate and default controls.
+     */
     public void changeControl() {
         alternateControl = !alternateControl;
     }

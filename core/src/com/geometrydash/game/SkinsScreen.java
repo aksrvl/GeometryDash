@@ -5,6 +5,9 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 
+/**
+ * The screen for selecting player skins.
+ */
 public class SkinsScreen implements Screen {
     final GeometryDashGame game;
     public OrthographicCamera camera;
@@ -27,6 +30,11 @@ public class SkinsScreen implements Screen {
     private static final int CHOSEN_BUTTON_HEIGHT = 56;
     public static int selectedSkin;
 
+    /**
+     * Constructs a new SkinsScreen.
+     *
+     * @param game The GeometryDashGame instance.
+     */
     public SkinsScreen(GeometryDashGame game) {
         this.game = game;
         int screenWidth = Gdx.graphics.getWidth();
@@ -55,7 +63,7 @@ public class SkinsScreen implements Screen {
     }
 
     @Override
-    public void render(float v) {
+    public void render(float delta) {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(Gdx.gl.GL_COLOR_BUFFER_BIT);
         // Update the camera

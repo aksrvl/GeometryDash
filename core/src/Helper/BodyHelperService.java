@@ -5,6 +5,9 @@ import com.badlogic.gdx.physics.box2d.*;
 
 import static Helper.Constants.PPM;
 
+/**
+ * The BodyHelperService class provides utility methods for creating and configuring Box2D bodies.
+ */
 public class BodyHelperService {
 
     /**

@@ -6,6 +6,9 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
+/**
+ * The screen that displays how to play instructions.
+ */
 public class HowToPlayScreen implements Screen {
     final GeometryDashGame game;
     public OrthographicCamera camera;
@@ -27,6 +30,11 @@ public class HowToPlayScreen implements Screen {
 
     private Texture[] playScreens;
 
+    /**
+     * Constructs a new HowToPlayScreen.
+     *
+     * @param game The GeometryDashGame instance.
+     */
     public HowToPlayScreen(GeometryDashGame game) {
         this.game = game;
         camera = new OrthographicCamera();
@@ -42,7 +50,7 @@ public class HowToPlayScreen implements Screen {
 
     @Override
     public void show() {
-
+        // Implementation not needed for this screen.
     }
 
     @Override
@@ -89,11 +97,20 @@ public class HowToPlayScreen implements Screen {
         game.batch.end();
     }
 
+    /**
+     * Initiates the transition to the next page.
+     */
     private void startTransition() {
         isTransitioning = true;
         transitionAlpha = 1f;
     }
 
+    /**
+     * Renders the current play screen.
+     *
+     * @param batch The SpriteBatch to render with.
+     * @param delta The time in seconds since the last render.
+     */
     private void renderCurrentPlayScreen(SpriteBatch batch, float delta) {
         if (isTransitioning) {
             transitionAlpha -= delta / TRANSITION_DURATION;
@@ -124,17 +141,17 @@ public class HowToPlayScreen implements Screen {
 
     @Override
     public void pause() {
-
+        // Implementation not needed for this screen.
     }
 
     @Override
     public void resume() {
-
+        // Implementation not needed for this screen.
     }
 
     @Override
     public void hide() {
-
+        // Implementation not needed for this screen.
     }
 
     @Override

@@ -18,17 +18,30 @@ import com.geometrydash.game.GameScreen;
 
 import static Helper.Constants.PPM;
 
+/**
+ * Helper class to set up tiled maps and parse map objects.
+ */
 public class TileMapHelper {
 
     private TiledMap tiledMap;
     private GameScreen gameScreen;
 
+    /**
+     * Constructor to initialize the TileMapHelper with the given GameScreen.
+     *
+     * @param gameScreen The GameScreen instance.
+     */
     public TileMapHelper(GameScreen gameScreen) {
         this.gameScreen = gameScreen;
     }
 
+    /**
+     * Setup the tiled map based on the selected level.
+     *
+     * @return The OrthogonalTiledMapRenderer for rendering the map.
+     */
     public OrthogonalTiledMapRenderer setupMap() {
-        if(LevelsScreen.selectedLevel==0) {
+        if (LevelsScreen.selectedLevel == 0) {
             tiledMap = new TmxMapLoader().load("maps/trainingLevel.tmx");
         }
         if(LevelsScreen.selectedLevel==1){
@@ -45,15 +58,19 @@ public class TileMapHelper {
         return new OrthogonalTiledMapRenderer(tiledMap);
     }
 
+    /**
+     * Parse map objects and create corresponding bodies in the Box2D world.
+     *
+     * @param mapObjects The map objects to parse.
+     */
     private void parseMapObjects(MapObjects mapObjects) {
         for (MapObject mapObject : mapObjects) {
             if (mapObject instanceof PolygonMapObject) {
                 Polygon polygon = ((PolygonMapObject) mapObject).getPolygon();
                 String polygonName = mapObject.getName();
 
-                if(polygonName==null){
+                if (polygonName == null) {
                     createStaticBody((PolygonMapObject) mapObject);
-
                 } else if (polygonName.equals("spike")) {
                     createSpike((PolygonMapObject) mapObject);
                 } else if (polygonName.equals("end")) {
@@ -82,6 +99,11 @@ public class TileMapHelper {
         }
     }
 
+    /**
+     * Create a static body from a PolygonMapObject.
+     *
+     * @param polygonMapObject The PolygonMapObject.
+     */
     private void createStaticBody(PolygonMapObject polygonMapObject) {
         float[] vertices = polygonMapObject.getPolygon().getTransformedVertices();
         Vector2[] worldVertices = new Vector2[vertices.length / 2];
@@ -92,9 +114,13 @@ public class TileMapHelper {
         }
 
         BodyHelperService.createStaticBody(gameScreen.getWorld(), worldVertices);
-
     }
 
+    /**
+     * Create a portal body from a Rectangle.
+     *
+     * @param rectangle The Rectangle representing the portal.
+     */
     private void createPortal(Rectangle rectangle) {
         Body body = BodyHelperService.createBody(
                 rectangle.getX() + rectangle.getWidth() / 2,
@@ -111,6 +137,11 @@ public class TileMapHelper {
         }
     }
 
+    /**
+     * Create spike bodies from a PolygonMapObject.
+     *
+     * @param polygonMapObject The PolygonMapObject representing spikes.
+     */
     private void createSpike(PolygonMapObject polygonMapObject) {
         float[] vertices = polygonMapObject.getPolygon().getTransformedVertices();
         Vector2[] worldVertices = new Vector2[vertices.length / 2];
@@ -125,6 +156,11 @@ public class TileMapHelper {
         }
     }
 
+    /**
+     * Create an end level body from a PolygonMapObject.
+     *
+     * @param polygonMapObject The PolygonMapObject representing the end level.
+     */
     private void endLevel(PolygonMapObject polygonMapObject) {
         float[] vertices = polygonMapObject.getPolygon().getTransformedVertices();
         Vector2[] worldVertices = new Vector2[vertices.length / 2];
